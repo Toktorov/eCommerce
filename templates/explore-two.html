@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Superex - NFT Marketplace HTML Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="NFT Marketplace Website Template" />
+        <meta name="keywords" content="blockchain nft, collectibles, crypto, crypto art, crypto asset, crypto marketplace, digital, item, NFT, NFT assets, NFT Gaming, nft marketplace, token, wallet" />
+        <meta content="Shreethemes" name="author" />
+        <meta content="support@shreethemes.in" name="Email" />
+        <meta content="https://shreethemes.in/" name="Website" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/tiny-slider.css" rel="stylesheet" />
+        <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+        <!-- Choice css -->               
+        <link rel="stylesheet" href="css/choices.min.css"/>
+        <!-- Main css -->
+        <link href="css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="css/colors/default.css" rel="stylesheet" id="color-opt">
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Loader -->
+
+        <!-- Navbar STart -->
+        <header id="topnav" class="defaultscroll sticky">
+            <div class="container">
+                <!-- Logo Start-->
+                <a class="logo" href="index.html">
+                    <span class="logo-light-mode">
+                        <img src="images/logo-dark.png" height="26" class="l-dark" alt="">
+                        <img src="images/logo-light.png" height="26" class="l-light" alt="">
+                    </span>
+                    <img src="images/logo-light.png" height="26" class="logo-dark-mode" alt="">
+                </a>
+                <!-- Logo end-->
+
+                <!-- Mobile -->
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+                <!-- Mobile -->
+
+                <!--Login button Start-->
+                <ul class="buy-button list-inline mb-0">
+                    <li class="list-inline-item mb-0 me-1">
+                        <div class="dropdown">
+                            <button type="button" class="btn dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="uil uil-search text-white title-dark btn-icon-light fs-5 align-middle"></i>
+                                <i class="uil uil-search text-dark btn-icon-dark fs-5 align-middle"></i>
+                            </button>
+                            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 p-0" style="width: 300px;">
+                                <div class="search-bar">
+                                    <div id="itemSearch" class="menu-search mb-0">
+                                        <form role="search" method="get" id="searchItemform" class="searchform">
+                                            <input type="text" class="form-control border rounded" name="s" id="searchItem" placeholder="Search...">
+                                            <input type="submit" id="searchItemsubmit" value="Search">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="list-inline-item mb-0 me-1">
+                        <a id="connectWallet">
+                            <span class="btn-icon-dark"><span class="btn btn-icon btn-pills btn-primary"><i class="uil uil-wallet fs-6"></i></span></span>
+                            <span class="btn-icon-light"><span class="btn btn-icon btn-pills btn-light"><i class="uil uil-wallet fs-6"></i></span></span>
+                        </a>
+                    </li>
+                    
+                    <li class="list-inline-item mb-0">
+                        <div class="dropdown dropdown-primary">
+                            <button type="button" class="btn btn-pills dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/client/01.jpg" class="rounded-pill avatar avatar-sm-sm" alt=""></button>
+                            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 pb-3 pt-0 overflow-hidden rounded" style="min-width: 200px;">
+                                <div class="position-relative">
+                                    <div class="pt-5 pb-3 bg-gradient-primary"></div>
+                                    <div class="px-3">
+                                        <div class="d-flex align-items-end mt-n4">
+                                            <img src="images/client/01.jpg" class="rounded-pill avatar avatar-md-sm img-thumbnail shadow-md" alt="">
+                                            <h6 class="text-dark fw-bold mb-0 ms-1">Calvin Carlo</h6>
+                                        </div>
+                                        <div class="mt-2">
+                                            <small class="text-start text-dark d-block fw-bold">Wallet:</small>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small id="myPublicAddress" class="text-muted">qhut0...hfteh45</small>
+                                                <a href="" class="text-primary"><span class="uil uil-copy"></span></a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-2">
+                                            <small class="text-dark">Balance: <span class="text-primary fw-bold">0.00045ETH</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-user align-middle h6 mb-0 me-1"></i></span> Profile</a>
+                                    <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile-edit.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Settings</a>
+                                    <div class="dropdown-divider border-top"></div>
+                                    <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="lock-screen.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6 mb-0 me-1"></i></span> Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--Login button End-->
+        
+                <div id="navigation">
+                    <!-- Navigation Menu-->   
+                    <ul class="navigation-menu nav-left nav-light">
+                        <li class="has-submenu parent-parent-menu-item">
+                            <a href="javascript:void(0)">Home</a><span class="menu-arrow"></span>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li class="megamenu-head">LTR Home Pages</li>
+                                        <li><a href="index.html" class="sub-menu-item">Home One</a></li>
+                                        <li><a href="index-two.html" class="sub-menu-item">Home Two</a></li>
+                                        <li><a href="index-three.html" class="sub-menu-item">Home Three</a></li>
+                                        <li><a href="index-four.html" class="sub-menu-item">Home Four</a></li>
+                                        <li><a href="index-five.html" class="sub-menu-item">Home Five <span class="badge bg-warning">NEW</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul>
+                                        <li class="megamenu-head">LTR Dark Home Pages</li>
+                                        <li><a href="index-dark.html" class="sub-menu-item">Home One Dark</a></li>
+                                        <li><a href="index-two-dark.html" class="sub-menu-item">Home Two Dark</a></li>
+                                        <li><a href="index-three-dark.html" class="sub-menu-item">Home Three Dark</a></li>
+                                        <li><a href="index-four-dark.html" class="sub-menu-item">Home Four Dark</a></li>
+                                        <li><a href="index-five-dark.html" class="sub-menu-item">Home Five Dark <span class="badge bg-warning">NEW</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul>
+                                        <li class="megamenu-head">RTL Home Pages</li>
+                                        <li><a href="index-rtl.html" class="sub-menu-item">Home One RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-two-rtl.html" class="sub-menu-item">Home Two RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-three-rtl.html" class="sub-menu-item">Home Three RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-four-rtl.html" class="sub-menu-item">Home Four RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-five-rtl.html" class="sub-menu-item">Home Five RTL <span class="badge bg-warning">NEW</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul>
+                                        <li class="megamenu-head">RTL Dark Home Pages</li>
+                                        <li><a href="index-dark-rtl.html" class="sub-menu-item">Home One Dark RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-two-dark-rtl.html" class="sub-menu-item">Home Two Dark RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-three-dark-rtl.html" class="sub-menu-item">Home Three Dark RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-four-dark-rtl.html" class="sub-menu-item">Home Four Dark RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-five-dark-rtl.html" class="sub-menu-item">Home Five Dark RTL <span class="badge bg-warning">NEW</span></a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="d-none d-lg-block">
+                                    <ul>
+                                        <li><img src="images/character.png" class="img-fluid" alt=""></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="has-submenu parent-parent-menu-item">
+                            <a href="javascript:void(0)">Explore</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="explore-one.html" class="sub-menu-item"> Explore One</a></li>
+                                <li><a href="explore-two.html" class="sub-menu-item"> Explore Two</a></li>
+                                <li><a href="explore-three.html" class="sub-menu-item"> Explore Three</a></li>
+                                <li><a href="explore-four.html" class="sub-menu-item"> Explore Four</a></li>
+                                <li><a href="auction.html" class="sub-menu-item">Live Auction</a></li>
+                                <li><a href="item-detail-one.html" class="sub-menu-item"> Item Detail One</a></li>
+                                <li><a href="item-detail-two.html" class="sub-menu-item"> Item Detail Two</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="activity.html" class="sub-menu-item"> Activity</a></li>
+
+                        <li><a href="wallet.html" class="sub-menu-item">Wallet</a></li>
+
+                        <li class="has-submenu parent-parent-menu-item">
+                            <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="aboutus.html" class="sub-menu-item">About Us</a></li>
+                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Creator </a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="creators.html" class="sub-menu-item"> Creators</a></li>
+                                        <li><a href="creator-profile.html" class="sub-menu-item"> Creator Profile</a></li>
+                                        <li><a href="creator-profile-edit.html" class="sub-menu-item"> Profile Edit</a></li>
+                                        <li><a href="become-creator.html" class="sub-menu-item"> Become Creator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="collections.html" class="sub-menu-item">Collections</a></li>
+                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Blog </a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="blogs.html" class="sub-menu-item"> Blogs</a></li>
+                                        <li><a href="blog-sidebar.html" class="sub-menu-item"> Blog with sidebar</a></li>
+                                        <li><a href="blog-detail.html" class="sub-menu-item"> Blog Detail</a></li>
+                                    </ul> 
+                                </li>
+                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Auth Pages </a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="login.html" class="sub-menu-item"> Login</a></li>
+                                        <li><a href="signup.html" class="sub-menu-item"> Signup</a></li>
+                                        <li><a href="reset-password.html" class="sub-menu-item"> Forgot Password</a></li>
+                                        <li><a href="lock-screen.html" class="sub-menu-item"> Lock Screen</a></li>
+                                    </ul> 
+                                </li>
+                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Special <span class="badge bg-warning">NEW</span> </a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="comingsoon.html" class="sub-menu-item"> Coming Soon</a></li>
+                                        <li><a href="maintenance.html" class="sub-menu-item"> Maintenance</a></li>
+                                        <li><a href="error.html" class="sub-menu-item"> 404!</a></li>
+                                    </ul> 
+                                </li>
+                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Help Center <span class="badge bg-warning">NEW</span> </a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="helpcenter-overview.html" class="sub-menu-item"> Overview</a></li>
+                                        <li><a href="helpcenter-faqs.html" class="sub-menu-item"> FAQs</a></li>
+                                        <li><a href="helpcenter-guides.html" class="sub-menu-item"> Guides</a></li>
+                                        <li><a href="helpcenter-support-request.html" class="sub-menu-item"> Support</a></li>
+                                    </ul> 
+                                </li>
+                                <li><a href="upload-work.html" class="sub-menu-item">Upload Works</a></li>
+                                <li><a href="terms.html" class="sub-menu-item">Terms Policy</a></li>
+                                <li><a href="privacy.html" class="sub-menu-item">Privacy Policy</a></li>
+                                <li><a href="changelog.html" class="sub-menu-item">Changelog</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="contact.html" class="sub-menu-item">Contact</a></li>
+                    </ul><!--end navigation menu-->
+                </div><!--end navigation-->
+            </div><!--end container-->
+        </header><!--end header-->
+        <!-- Navbar End -->
+
+        <!-- Start Home -->
+        <section class="bg-half-170 d-table w-100" style="background: url('images/bg/01.jpg') bottom;">
+            <div class="bg-overlay bg-gradient-overlay-2"></div>
+            <div class="container">
+                <div class="row mt-5 justify-content-center">
+                    <div class="col-12">
+                        <div class="title-heading text-center">
+                            <h5 class="heading fw-semibold sub-heading text-white title-dark">Marketplace</h5>
+                            <p class="text-white-50 para-desc mx-auto mb-0">Explore the latest NFTs digital product</p>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <div class="position-relative">            
+            <div class="shape overflow-hidden text-white">
+                <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                </svg>
+            </div>
+        </div>
+        <!-- End Home -->
+
+        <!-- Start -->
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="features-absolute">
+                            <div class="row justify-content-center" id="reserve-form">
+                                <div class="col-xl-10 mt-lg-5">
+                                    <div class="card bg-white feature-top border-0 shadow rounded p-3">
+                                        <form action="#">
+                                            <div class="registration-form text-dark text-start">
+                                                <div class="row g-lg-0">
+                                                    <div class="col-lg-3 col-md-6">
+                                                        <div class="filter-search-form position-relative filter-border">
+                                                            <i class="uil uil-search icons"></i>
+                                                            <input name="name" type="text" id="search-keyword" class="form-control filter-input-box bg-light border-0" placeholder="Search your keaywords">
+                                                        </div>
+                                                    </div><!--end col-->
+
+                                                    <div class="col-lg-3 col-md-6 mt-3 mt-md-0">
+                                                        <div class="filter-search-form position-relative filter-border">
+                                                            <i class="uil uil-usd-circle icons"></i>
+                                                            <select class="form-select" data-trigger name="choices-criteria" id="choices-criteria" aria-label="Default select example">
+                                                                <option selected="" value="1">Auction Product</option>
+                                                                <option value="2">On Sale</option>
+                                                                <option value="3">Offers</option>
+                                                            </select>
+                                                        </div>
+                                                    </div><!--end col-->
+                                                    
+                                                    <div class="col-lg-3 col-md-6 mt-3 mt-lg-0">
+                                                        <div class="filter-search-form position-relative filter-border">
+                                                            <i class="uil uil-window icons"></i>
+                                                            <select class="form-select " data-trigger name="choices-type" id="choices-type" aria-label="Default select example">
+                                                                <option selected="" value="1">Art</option>
+                                                                <option value="2">Games</option>
+                                                                <option value="3">Music</option>
+                                                                <option value="4">Videos</option>
+                                                                <option value="5">Memes</option>
+                                                            </select>
+                                                        </div>
+                                                    </div><!--end col-->
+
+                                                    <div class="col-lg-3 col-md-6 mt-3 mt-lg-0">
+                                                        <input type="submit" id="search" name="search" style="height: 60px;" class="btn btn-primary rounded-md searchbtn submit-btn w-100" value="Search">
+                                                    </div><!--end col-->
+                                                </div><!--end row-->
+                                            </div><!--end container-->
+                                        </form>
+                                    </div>
+                                </div><!--ed col-->
+                            </div><!--end row-->
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            <div class="container">
+                <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1">
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/gif/1.gif" class="img-fluid" alt=""></a>
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">GIFs</a>
+                                </div>
+
+                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-primary text-white title-dark rounded-pill px-3">
+                                    <i class="uil uil-clock"></i> <small id="auction-item-1" class="fw-bold"></small>
+                                </div>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Deep Sea Phantasy</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/items/1.jpg" class="img-fluid" alt=""></a>
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">Arts</a>
+                                </div>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">CyberPrimal 042 LAN</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/gif/2.gif" class="img-fluid" alt=""></a>
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">Games</a>
+                                </div>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Crypto Egg Stamp #5</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/items/2.jpg" class="img-fluid" alt=""></a>
+
+                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-primary text-white title-dark rounded-pill px-3">
+                                    <i class="uil uil-clock"></i> <small id="auction-item-2" class="fw-bold"></small>
+                                </div>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Colorful Abstract Painting</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/items/3.jpg" class="img-fluid" alt=""></a>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Liquid Forest Princess</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/gif/3.gif" class="img-fluid" alt=""></a>
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">GIFs</a>
+                                </div>
+
+                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-danger text-white title-dark rounded-pill px-3">
+                                    <i class="uil uil-clock"></i> <small id="auction-item-3" class="fw-bold"></small>
+                                </div>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Spider Eyes Modern Art</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/items/4.jpg" class="img-fluid" alt=""></a>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Synthwave Painting</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/gif/4.gif" class="img-fluid" alt=""></a>
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">GIFs</a>
+                                </div>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Contemporary Abstract</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/items/5.jpg" class="img-fluid" alt=""></a>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Valkyrie Abstract Art</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/gif/5.gif" class="img-fluid" alt=""></a>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">The girl with the firefly</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/items/6.jpg" class="img-fluid" alt=""></a>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Dodo hide the seek</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/gif/6.gif" class="img-fluid" alt=""></a>
+
+                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-primary text-white title-dark rounded-pill px-3">
+                                    <i class="uil uil-clock"></i> <small id="auction-item-4" class="fw-bold"></small>
+                                </div>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Pinky Ocean</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/items/7.jpg" class="img-fluid" alt=""></a>
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">Music</a>
+                                </div>
+
+                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-primary text-white title-dark rounded-pill px-3">
+                                    <i class="uil uil-clock"></i> <small id="auction-item-5" class="fw-bold"></small>
+                                </div>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Rainbow Style</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/items/8.jpg" class="img-fluid" alt=""></a>
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">Gallery</a>
+                                </div>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Running Puppets</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/items/9.jpg" class="img-fluid" alt=""></a>
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">Video</a>
+                                </div>
+
+                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-warning text-white title-dark rounded-pill px-3">
+                                    <i class="uil uil-clock"></i> <small id="auction-item-6" class="fw-bold"></small>
+                                </div>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">Loop Donut</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col mt-4 pt-2">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="img-group">
+                                    <a href="creator-profile.html" class="user-avatar">
+                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    </a>
+                                </div>
+                                
+                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                            </div>
+                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                <a href="item-detail-one.html"><img src="images/items/10.jpg" class="img-fluid" alt=""></a>
+
+                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-info text-white title-dark rounded-pill px-3">
+                                    <i class="uil uil-clock"></i> <small id="auction-item-7" class="fw-bold"></small>
+                                </div>
+                            </div>
+
+                            <div class="card-body content position-relative p-0 mt-3">
+                                <a href="item-detail-one.html" class="title text-dark h6">This is Our Story</a>
+
+                                <div class="d-flex justify-content-between mt-2">
+                                    <small class="rate fw-bold">20.5 ETH</small>
+                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row justify-content-center mt-4">
+                    <div class="col">
+                        <div class="text-center">
+                            <a href="javascript:void(0)" class="btn btn-primary rounded-md"><i class="uil uil-process mdi-spin me-1"></i> Load More</a>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- End -->
+
+        <!-- CTA Start -->
+        <section class="section pt-0 pt-sm-5 mt-0 mt-sm-5">
+            <div class="container">
+                <div class="bg-black rounded-md p-md-5 p-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="app-subscribe text-center text-md-start">
+                                    <img src="images/cta.png" class="img-fluid" height="120" alt="">
+                                </div>
+                            </div><!--end col-->
+
+                            <div class="col-lg-8 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                                <div class="section-title text-center text-md-start ms-xl-5 ms-md-4">
+                                    <h4 class="display-6 fw-bold text-white title-dark mb-0">Get <span class="text-gradient-primary fw-bold">Free collections </span> <br> with your subscription</h4>
+                                
+                                    <div class="mt-4">
+                                        <a href="javascript:void(0)" class="btn btn-link primary text-white title-dark">Subscribe Now <i class="uil uil-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div>
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- CTA End -->
+
+        <!-- Footer Start -->
+        <footer class="bg-footer">
+            <div class="py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-7 col-md-6">
+                            <h5 class="text-light fw-normal title-dark">Download the Superex app to explore any NFTs</h5>
+                            
+                            <div class="mt-4">
+                                <a href=""><img src="images/app.png" height="40" alt=""></a>
+                                <a href="" class="ms-2"><img src="images/playstore.png" height="40" alt=""></a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-5 col-md-6 mt-4 mt-sm-0">
+                            <h5 class="text-light fw-normal title-dark">Join Superex community</h5>
+
+                            <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-facebook-f"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-instagram"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-linkedin"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-dribbble"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-twitter"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-skype"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-telegram"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-slack"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-tumblr"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-whatsapp"></i></a></li>
+                            </ul>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end container-->
+            </div><!--end div-->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-py-60 footer-border">
+                            <div class="row">
+                                <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                                    <a href="#" class="logo-footer">
+                                        <img src="images/icon-logo-64.png" alt="">
+                                    </a>
+                                    <p class="para-desc mb-0 mt-4">Buy, sell and discover exclusive digital assets by the top artists of NFTs world.</p>
+                                
+                                    
+                                </div><!--end col-->
+                                
+                                <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">Superex</h5>
+                                    <ul class="list-unstyled footer-list mt-4">
+                                        <li><a href="explore-two.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Explore</a></li>
+                                        <li><a href="auction.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Live Auction</a></li>
+                                        <li><a href="activity.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Activities</a></li>
+                                        <li><a href="wallet.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Wallet</a></li>
+                                        <li><a href="creators.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Creators</a></li>
+                                    </ul>
+                                </div><!--end col-->
+                                
+                                <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">Community</h5>
+                                    <ul class="list-unstyled footer-list mt-4">
+                                        <li><a href="aboutus.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> About Us</a></li>
+                                        <li><a href="blogs.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Blog</a></li>
+                                        <li><a href="terms.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Terms & Conditions</a></li>
+                                        <li><a href="privacy.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Privacy Policy</a></li>
+                                        <li><a href="login.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Login</a></li>
+                                        <li><a href="mailto:contact@example.com" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Subscribe</a></li>
+                                        <li><a href="contact.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Contact</a></li>
+                                    </ul>
+                                </div><!--end col-->
+            
+                                <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">Newsletter</h5>
+                                    <p class="mt-4">Sign up and receive the latest tips via email.</p>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="foot-subscribe mb-3">
+                                                    <label class="form-label">Write your email <span class="text-danger">*</span></label>
+                                                    <div class="form-icon position-relative">
+                                                        <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                        <input type="email" name="email" id="emailsubscribe" class="form-control ps-5 rounded" placeholder="Your email : " required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="d-grid">
+                                                    <input type="submit" id="submitsubscribe" name="send" class="btn btn-soft-primary" value="Subscribe">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            <div class="footer-py-30 footer-bar">
+                <div class="container text-center">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <div class="text-sm-start">
+                                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Superex. Design with <i class="mdi mdi-heart text-danger"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
+                            </div>
+                        </div><!--end col-->
+    
+                        <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                            <ul class="list-unstyled footer-list text-sm-end mb-0">
+                                <li class="list-inline-item mb-0"><a href="privacy.html" class="text-foot me-2">Privacy</a></li>
+                                <li class="list-inline-item mb-0"><a href="terms.html" class="text-foot me-2">Terms</a></li>
+                                <li class="list-inline-item mb-0"><a href="helpcenter-overview.html" class="text-foot me-2">Help Center</a></li>
+                                <li class="list-inline-item mb-0"><a href="contact.html" class="text-foot">Contact</a></li>
+                            </ul>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end container-->
+            </div>
+        </footer><!--end footer-->
+        <!-- Footer End -->
+
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top rounded-pill fs-5"><i data-feather="arrow-up" class="fea icon-sm icons align-middle"></i></a>
+        <!-- Back to top -->
+
+        <!-- Wallet Modal -->
+        <div class="modal fade" id="modal-metamask" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">                    
+                <div class="modal-content justify-content-center border-0 shadow-md rounded-md position-relative">
+                    <div class="position-absolute top-0 start-100 translate-middle z-index-1">
+                        <button type="button" class="btn btn-icon btn-pills btn-sm btn-light btn-close opacity-10" data-bs-dismiss="modal" id="close-modal"><i class="uil uil-times fs-4"></i></button>
+                    </div>
+
+                    <div class="modal-body p-4 text-center">
+                        <img src="images/wallet/MetaMask_Fox.svg" class="avatar avatar-md-md rounded-circle shadow-sm " alt="">
+
+                        <div class="content mt-4">
+                            <h5 class="text-danger mb-4">Error!</h5>
+
+                            <P class="text-muted">Please Download MetaMask and create your profile and wallet in MetaMask. Please click and check the details,</P>
+
+                            <a href="https://metamask.io/" class="btn btn-link primary text-primary fw-bold" target="_blank">MetaMask</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Wallet Modal -->
+
+        <!-- Style switcher -->
+        <div id="style-switcher" class="bg-light border p-3 pt-2 pb-2" onclick="toggleSwitcher()">
+            <div class="content">
+                <h6 class="title text-center">Select Your Color</h6>
+                <ul class="pattern">
+                    <li class="list-inline-item">
+                        <a class="color1" href="javascript: void(0);" onclick="setColor('default')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color2" href="javascript: void(0);" onclick="setColor('yellow')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color3" href="javascript: void(0);" onclick="setColor('green')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color4" href="javascript: void(0);" onclick="setColor('red')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color5" href="javascript: void(0);" onclick="setColor('purple')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color6" href="javascript: void(0);" onclick="setColor('saffron')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color7" href="javascript: void(0);" onclick="setColor('pink')"></a>
+                    </li>
+                </ul>
+
+                <h6 class="title text-center pt-3 mb-0 border-top">Theme Option</h6>
+                <ul class="text-center list-unstyled mb-0">
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary rtl-version t-rtl-light mt-2" onclick="setTheme('style-rtl')">RTL</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary ltr-version t-ltr-light mt-2" onclick="setTheme('style')">LTR</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary dark-rtl-version t-rtl-dark mt-2" onclick="setTheme('style-dark-rtl')">RTL</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary dark-ltr-version t-ltr-dark mt-2" onclick="setTheme('style-dark')">LTR</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-dark dark-version t-dark mt-2" onclick="setTheme('style-dark')">Dark</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-dark light-version t-light mt-2" onclick="setTheme('style')">Light</a></li>
+                </ul>
+
+                <h6 class="title text-center pt-3 mb-0 border-top">Download</h6>
+                <ul class="text-center list-unstyled mb-0">
+                    <li><a href="https://1.envato.market/superex" target="_blank" class="btn btn-sm btn-block btn-warning mt-2 w-100">Download</a></li>
+                </ul>
+            </div>
+            <div class="bottom p-0">
+                <a href="javascript: void(0);" class="settings bg-white title-bg-dark shadow d-flex align-items-center justify-content-center"><i class="mdi mdi-cog mdi-24px position-absolute mdi-spin text-primary"></i></a>
+            </div>
+        </div>
+        <!-- end Style switcher -->
+        
+        <!-- javascript -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/tiny-slider.js "></script>
+        <script src="js/shuffle.min.js"></script>
+        <script src="js/feather.min.js"></script>
+        <!-- Choice js -->
+        <script src="js/choices.min.js"></script>
+        <!-- Main Js -->
+        <script src="js/plugins.init.js"></script>
+        <script src="js/app.js"></script>
+        
+    </body>
+
+</html>

@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Superex - NFT Marketplace HTML Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="NFT Marketplace Website Template" />
+        <meta name="keywords" content="blockchain nft, collectibles, crypto, crypto art, crypto asset, crypto marketplace, digital, item, NFT, NFT assets, NFT Gaming, nft marketplace, token, wallet" />
+        <meta content="Shreethemes" name="author" />
+        <meta content="support@shreethemes.in" name="Email" />
+        <meta content="https://shreethemes.in/" name="Website" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+        <!-- Main css -->
+        <link href="css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="css/colors/default.css" rel="stylesheet" id="color-opt">
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Loader -->
+
+        <!-- Navbar STart -->
+        <header id="topnav" class="defaultscroll sticky">
+            <div class="container">
+                <!-- Logo Start-->
+                <a class="logo" href="index.html">
+                    <img src="images/logo-dark.png" height="26" class="logo-light-mode" alt="">
+                    <img src="images/logo-light.png" height="26" class="logo-dark-mode" alt="">
+                </a>
+                <!-- Logo end-->
+
+                <!-- Mobile -->
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+                <!-- Mobile -->
+
+                <!--Login button Start-->
+                <ul class="buy-button list-inline mb-0">
+                    <li class="list-inline-item mb-0 me-1">
+                        <div class="dropdown">
+                            <button type="button" class="btn dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="uil uil-search text-dark fs-5 align-middle"></i>
+                            </button>
+                            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 p-0" style="width: 300px;">
+                                <div class="search-bar">
+                                    <div id="itemSearch" class="menu-search mb-0">
+                                        <form role="search" method="get" id="searchItemform" class="searchform">
+                                            <input type="text" class="form-control border rounded" name="s" id="searchItem" placeholder="Search...">
+                                            <input type="submit" id="searchItemsubmit" value="Search">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="list-inline-item mb-0 me-1">
+                        <a id="connectWallet" class="btn btn-icon btn-pills btn-primary"><i class="uil uil-wallet fs-6"></i></a>
+                    </li>
+                    
+                    <li class="list-inline-item mb-0">
+                        <div class="dropdown dropdown-primary">
+                            <button type="button" class="btn btn-pills dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/client/01.jpg" class="rounded-pill avatar avatar-sm-sm" alt=""></button>
+                            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 pb-3 pt-0 overflow-hidden rounded" style="min-width: 200px;">
+                                <div class="position-relative">
+                                    <div class="pt-5 pb-3 bg-gradient-primary"></div>
+                                    <div class="px-3">
+                                        <div class="d-flex align-items-end mt-n4">
+                                            <img src="images/client/01.jpg" class="rounded-pill avatar avatar-md-sm img-thumbnail shadow-md" alt="">
+                                            <h6 class="text-dark fw-bold mb-0 ms-1">Calvin Carlo</h6>
+                                        </div>
+                                        <div class="mt-2">
+                                            <small class="text-start text-dark d-block fw-bold">Wallet:</small>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small id="myPublicAddress" class="text-muted">qhut0...hfteh45</small>
+                                                <a href="" class="text-primary"><span class="uil uil-copy"></span></a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-2">
+                                            <small class="text-dark">Balance: <span class="text-primary fw-bold">0.00045ETH</span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-user align-middle h6 mb-0 me-1"></i></span> Profile</a>
+                                    <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile-edit.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Settings</a>
+                                    <div class="dropdown-divider border-top"></div>
+                                    <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="lock-screen.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6 mb-0 me-1"></i></span> Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--Login button End-->
+        
+                <div id="navigation">
+                    <!-- Navigation Menu-->   
+                    <ul class="navigation-menu nav-left">
+                        <li class="has-submenu parent-parent-menu-item">
+                            <a href="javascript:void(0)">Home</a><span class="menu-arrow"></span>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li class="megamenu-head">LTR Home Pages</li>
+                                        <li><a href="index.html" class="sub-menu-item">Home One</a></li>
+                                        <li><a href="index-two.html" class="sub-menu-item">Home Two</a></li>
+                                        <li><a href="index-three.html" class="sub-menu-item">Home Three</a></li>
+                                        <li><a href="index-four.html" class="sub-menu-item">Home Four</a></li>
+                                        <li><a href="index-five.html" class="sub-menu-item">Home Five <span class="badge bg-warning">NEW</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul>
+                                        <li class="megamenu-head">LTR Dark Home Pages</li>
+                                        <li><a href="index-dark.html" class="sub-menu-item">Home One Dark</a></li>
+                                        <li><a href="index-two-dark.html" class="sub-menu-item">Home Two Dark</a></li>
+                                        <li><a href="index-three-dark.html" class="sub-menu-item">Home Three Dark</a></li>
+                                        <li><a href="index-four-dark.html" class="sub-menu-item">Home Four Dark</a></li>
+                                        <li><a href="index-five-dark.html" class="sub-menu-item">Home Five Dark <span class="badge bg-warning">NEW</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul>
+                                        <li class="megamenu-head">RTL Home Pages</li>
+                                        <li><a href="index-rtl.html" class="sub-menu-item">Home One RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-two-rtl.html" class="sub-menu-item">Home Two RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-three-rtl.html" class="sub-menu-item">Home Three RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-four-rtl.html" class="sub-menu-item">Home Four RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-five-rtl.html" class="sub-menu-item">Home Five RTL <span class="badge bg-warning">NEW</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul>
+                                        <li class="megamenu-head">RTL Dark Home Pages</li>
+                                        <li><a href="index-dark-rtl.html" class="sub-menu-item">Home One Dark RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-two-dark-rtl.html" class="sub-menu-item">Home Two Dark RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-three-dark-rtl.html" class="sub-menu-item">Home Three Dark RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-four-dark-rtl.html" class="sub-menu-item">Home Four Dark RTL <span class="badge bg-warning">NEW</span></a></li>
+                                        <li><a href="index-five-dark-rtl.html" class="sub-menu-item">Home Five Dark RTL <span class="badge bg-warning">NEW</span></a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="d-none d-lg-block">
+                                    <ul>
+                                        <li><img src="images/character.png" class="img-fluid" alt=""></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="has-submenu parent-parent-menu-item">
+                            <a href="javascript:void(0)">Explore</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="explore-one.html" class="sub-menu-item"> Explore One</a></li>
+                                <li><a href="explore-two.html" class="sub-menu-item"> Explore Two</a></li>
+                                <li><a href="explore-three.html" class="sub-menu-item"> Explore Three</a></li>
+                                <li><a href="explore-four.html" class="sub-menu-item"> Explore Four</a></li>
+                                <li><a href="auction.html" class="sub-menu-item">Live Auction</a></li>
+                                <li><a href="item-detail-one.html" class="sub-menu-item"> Item Detail One</a></li>
+                                <li><a href="item-detail-two.html" class="sub-menu-item"> Item Detail Two</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="activity.html" class="sub-menu-item"> Activity</a></li>
+
+                        <li><a href="wallet.html" class="sub-menu-item">Wallet</a></li>
+
+                        <li class="has-submenu parent-parent-menu-item">
+                            <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="aboutus.html" class="sub-menu-item">About Us</a></li>
+                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Creator </a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="creators.html" class="sub-menu-item"> Creators</a></li>
+                                        <li><a href="creator-profile.html" class="sub-menu-item"> Creator Profile</a></li>
+                                        <li><a href="creator-profile-edit.html" class="sub-menu-item"> Profile Edit</a></li>
+                                        <li><a href="become-creator.html" class="sub-menu-item"> Become Creator</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="collections.html" class="sub-menu-item">Collections</a></li>
+                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Blog </a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="blogs.html" class="sub-menu-item"> Blogs</a></li>
+                                        <li><a href="blog-sidebar.html" class="sub-menu-item"> Blog with sidebar</a></li>
+                                        <li><a href="blog-detail.html" class="sub-menu-item"> Blog Detail</a></li>
+                                    </ul> 
+                                </li>
+                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Auth Pages </a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="login.html" class="sub-menu-item"> Login</a></li>
+                                        <li><a href="signup.html" class="sub-menu-item"> Signup</a></li>
+                                        <li><a href="reset-password.html" class="sub-menu-item"> Forgot Password</a></li>
+                                        <li><a href="lock-screen.html" class="sub-menu-item"> Lock Screen</a></li>
+                                    </ul> 
+                                </li>
+                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Special <span class="badge bg-warning">NEW</span> </a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="comingsoon.html" class="sub-menu-item"> Coming Soon</a></li>
+                                        <li><a href="maintenance.html" class="sub-menu-item"> Maintenance</a></li>
+                                        <li><a href="error.html" class="sub-menu-item"> 404!</a></li>
+                                    </ul> 
+                                </li>
+                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Help Center <span class="badge bg-warning">NEW</span> </a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="helpcenter-overview.html" class="sub-menu-item"> Overview</a></li>
+                                        <li><a href="helpcenter-faqs.html" class="sub-menu-item"> FAQs</a></li>
+                                        <li><a href="helpcenter-guides.html" class="sub-menu-item"> Guides</a></li>
+                                        <li><a href="helpcenter-support-request.html" class="sub-menu-item"> Support</a></li>
+                                    </ul> 
+                                </li>
+                                <li><a href="upload-work.html" class="sub-menu-item">Upload Works</a></li>
+                                <li><a href="terms.html" class="sub-menu-item">Terms Policy</a></li>
+                                <li><a href="privacy.html" class="sub-menu-item">Privacy Policy</a></li>
+                                <li><a href="changelog.html" class="sub-menu-item">Changelog</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="contact.html" class="sub-menu-item">Contact</a></li>
+                    </ul><!--end navigation menu-->
+                </div><!--end navigation-->
+            </div><!--end container-->
+        </header><!--end header-->
+        <!-- Navbar End -->
+
+        <!-- Start Home -->
+        <section class="bg-creator-profile">
+            <div class="container">
+                <div class="profile-banner">
+                    <input id="pro-banner" name="profile-banner" type="file" class="d-none" onchange="loadFile(event)" />
+                    <div class="position-relative d-inline-block">
+                        <img src="images/blog/single.jpg" class="rounded-md shadow-sm img-fluid" id="profile-banner" alt="">
+                        <label class="icons position-absolute bottom-0 end-0" for="pro-banner"><span class="btn btn-icon btn-sm btn-pills btn-primary"><i data-feather="camera" class="icons"></i></span></label>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <div class="text-center mt-n80">
+                            <div class="profile-pic">
+                                <input id="pro-img" name="profile-image" type="file" class="d-none" onchange="loadFile(event)" />
+                                <div class="position-relative d-inline-block">
+                                    <img src="images/client/01.jpg" class="avatar avatar-medium img-thumbnail rounded-pill shadow-sm" id="profile-image" alt="">
+                                    <label class="icons position-absolute bottom-0 end-0" for="pro-img"><span class="btn btn-icon btn-sm btn-pills btn-primary"><i data-feather="camera" class="icons"></i></span></label>
+                                </div>
+                            </div>
+
+                            <div class="content mt-3">
+                                <h5 class="mb-3">streetboyyy</h5>
+                                <small class="text-muted px-2 py-1 rounded-lg shadow">bhcedeh5sdijuj-husac4saiu <a href="javascript:void(0)" class="text-primary h5 ms-1"><i class="uil uil-copy"></i></a></small>
+
+                                <h6 class="mt-3 mb-0">Artist, UX / UI designer, and Entrepreneur</h6>
+
+                                <div class="mt-4">
+                                    <a href="creator-profile-edit.html" class="btn btn-pills btn-outline-primary mx-1">Edit Profile</a>
+                                    <a href="upload-work.html" class="btn btn-pills btn-icon btn-outline-primary mx-1"><i class="uil uil-folder-upload"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container mt-100 mt-60">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs border-bottom" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="Create-tab" data-bs-toggle="tab" data-bs-target="#CreateItem" type="button" role="tab" aria-controls="CreateItem" aria-selected="true">Created</button>
+                            </li>
+                            
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Liked-tab" data-bs-toggle="tab" data-bs-target="#Liked" type="button" role="tab" aria-controls="Liked" aria-selected="false">Liked</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Sale-tab" data-bs-toggle="tab" data-bs-target="#Sale" type="button" role="tab" aria-controls="Sale" aria-selected="false">On Sale</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Collection-tab" data-bs-toggle="tab" data-bs-target="#Collection" type="button" role="tab" aria-controls="Collection" aria-selected="false">Collection</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Activites-tab" data-bs-toggle="tab" data-bs-target="#Activites" type="button" role="tab" aria-controls="Activites" aria-selected="false">Activites</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Followers-tab" data-bs-toggle="tab" data-bs-target="#Followers" type="button" role="tab" aria-controls="Followers" aria-selected="false">Followers</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="About-tab" data-bs-toggle="tab" data-bs-target="#About" type="button" role="tab" aria-controls="About" aria-selected="false">About</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content mt-4 pt-2" id="myTabContent">
+                            <div class="tab-pane fade show active" id="CreateItem" role="tabpanel" aria-labelledby="Create-tab">
+                                <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 g-4">
+                                    <div class="col">
+                                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="img-group">
+                                                    <a href="creator-profile.html" class="user-avatar">
+                                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                </div>
+                                                
+                                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                            </div>
+                
+                                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                                <a href="item-detail-one.html"><img src="images/gif/1.gif" class="img-fluid" alt=""></a>
+                                                <div class="position-absolute top-0 start-0 m-2">
+                                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">GIFs</a>
+                                                </div>
+                
+                                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-primary text-white title-dark rounded-pill px-3">
+                                                    <i class="uil uil-clock"></i> <small id="auction-item-1" class="fw-bold"></small>
+                                                </div>
+                                            </div>
+                
+                                            <div class="card-body content position-relative p-0 mt-3">
+                                                <a href="item-detail-one.html" class="title text-dark h6">Deep Sea Phantasy</a>
+                
+                                                <div class="d-flex justify-content-between mt-2">
+                                                    <small class="rate fw-bold">20.5 ETH</small>
+                                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col">
+                                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="img-group">
+                                                    <a href="creator-profile.html" class="user-avatar">
+                                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                </div>
+                                                
+                                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                            </div>
+                                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                                <a href="item-detail-one.html"><img src="images/items/1.jpg" class="img-fluid" alt=""></a>
+                                                <div class="position-absolute top-0 start-0 m-2">
+                                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">Arts</a>
+                                                </div>
+                                            </div>
+                
+                                            <div class="card-body content position-relative p-0 mt-3">
+                                                <a href="item-detail-one.html" class="title text-dark h6">CyberPrimal 042 LAN</a>
+                
+                                                <div class="d-flex justify-content-between mt-2">
+                                                    <small class="rate fw-bold">20.5 ETH</small>
+                                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col">
+                                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="img-group">
+                                                    <a href="creator-profile.html" class="user-avatar">
+                                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                </div>
+                                                
+                                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                            </div>
+                                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                                <a href="item-detail-one.html"><img src="images/gif/2.gif" class="img-fluid" alt=""></a>
+                                                <div class="position-absolute top-0 start-0 m-2">
+                                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">Games</a>
+                                                </div>
+                                            </div>
+                
+                                            <div class="card-body content position-relative p-0 mt-3">
+                                                <a href="item-detail-one.html" class="title text-dark h6">Crypto Egg Stamp #5</a>
+                
+                                                <div class="d-flex justify-content-between mt-2">
+                                                    <small class="rate fw-bold">20.5 ETH</small>
+                                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col">
+                                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="img-group">
+                                                    <a href="creator-profile.html" class="user-avatar">
+                                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                </div>
+                                                
+                                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                            </div>
+                                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                                <a href="item-detail-one.html"><img src="images/items/2.jpg" class="img-fluid" alt=""></a>
+                
+                                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-primary text-white title-dark rounded-pill px-3">
+                                                    <i class="uil uil-clock"></i> <small id="auction-item-2" class="fw-bold"></small>
+                                                </div>
+                                            </div>
+                
+                                            <div class="card-body content position-relative p-0 mt-3">
+                                                <a href="item-detail-one.html" class="title text-dark h6">Colorful Abstract Painting</a>
+                
+                                                <div class="d-flex justify-content-between mt-2">
+                                                    <small class="rate fw-bold">20.5 ETH</small>
+                                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col">
+                                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="img-group">
+                                                    <a href="creator-profile.html" class="user-avatar">
+                                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                </div>
+                                                
+                                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                            </div>
+                                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                                <a href="item-detail-one.html"><img src="images/items/3.jpg" class="img-fluid" alt=""></a>
+                                            </div>
+                
+                                            <div class="card-body content position-relative p-0 mt-3">
+                                                <a href="item-detail-one.html" class="title text-dark h6">Liquid Forest Princess</a>
+                
+                                                <div class="d-flex justify-content-between mt-2">
+                                                    <small class="rate fw-bold">20.5 ETH</small>
+                                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col">
+                                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="img-group">
+                                                    <a href="creator-profile.html" class="user-avatar">
+                                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                </div>
+                                                
+                                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                            </div>
+                                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                                <a href="item-detail-one.html"><img src="images/gif/3.gif" class="img-fluid" alt=""></a>
+                                                <div class="position-absolute top-0 start-0 m-2">
+                                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">GIFs</a>
+                                                </div>
+                
+                                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-danger text-white title-dark rounded-pill px-3">
+                                                    <i class="uil uil-clock"></i> <small id="auction-item-3" class="fw-bold"></small>
+                                                </div>
+                                            </div>
+                
+                                            <div class="card-body content position-relative p-0 mt-3">
+                                                <a href="item-detail-one.html" class="title text-dark h6">Spider Eyes Modern Art</a>
+                
+                                                <div class="d-flex justify-content-between mt-2">
+                                                    <small class="rate fw-bold">20.5 ETH</small>
+                                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col">
+                                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="img-group">
+                                                    <a href="creator-profile.html" class="user-avatar">
+                                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                </div>
+                                                
+                                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                            </div>
+                                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                                <a href="item-detail-one.html"><img src="images/items/4.jpg" class="img-fluid" alt=""></a>
+                                            </div>
+                
+                                            <div class="card-body content position-relative p-0 mt-3">
+                                                <a href="item-detail-one.html" class="title text-dark h6">Synthwave Painting</a>
+                
+                                                <div class="d-flex justify-content-between mt-2">
+                                                    <small class="rate fw-bold">20.5 ETH</small>
+                                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col">
+                                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="img-group">
+                                                    <a href="creator-profile.html" class="user-avatar">
+                                                        <img src="images/client/08.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/05.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                    <a href="creator-profile.html" class="user-avatar ms-n3">
+                                                        <img src="images/client/06.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    </a>
+                                                </div>
+                                                
+                                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                            </div>
+                                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                                <a href="item-detail-one.html"><img src="images/gif/4.gif" class="img-fluid" alt=""></a>
+                                                <div class="position-absolute top-0 start-0 m-2">
+                                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">GIFs</a>
+                                                </div>
+                                            </div>
+                
+                                            <div class="card-body content position-relative p-0 mt-3">
+                                                <a href="item-detail-one.html" class="title text-dark h6">Contemporary Abstract</a>
+                
+                                                <div class="d-flex justify-content-between mt-2">
+                                                    <small class="rate fw-bold">20.5 ETH</small>
+                                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </div>
+
+                            <div class="tab-pane fade" id="Liked" role="tabpanel" aria-labelledby="Liked-tab">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-5 col-md-8 text-center">
+                                        <img src="images/svg/office-desk.svg" class="img-fluid" alt="">
+
+                                        <div class="content">
+                                            <h5 class="mb-4">No Items</h5>
+                                            <p class="text-muted">Show your appreciation for other's work by liking the shots you love. We'll collect all of your likes here for you to revisit anytime.</p>
+                                        </div>
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </div>
+
+                            <div class="tab-pane fade" id="Sale" role="tabpanel" aria-labelledby="Sale-tab">
+                                <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 g-4">
+                                    <div class="col">
+                                        <div class="card nft-items nft-primary nft-auction rounded-md shadow overflow-hidden mb-1 p-3">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="images/client/01.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    <a href="javascript:void(0)" class="text-dark small creator-name h6 mb-0 ms-2">@StreetBoyyy</a>
+                                                </div>
+                                            </div>
+                
+                                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                                <a href="item-detail-one.html"><img src="images/gif/4.gif" class="img-fluid" alt=""></a>
+                                                <div class="position-absolute top-0 start-0 m-2">
+                                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">GIFs</a>
+                                                </div>
+                                                <div class="position-absolute top-0 end-0 m-2">
+                                                    <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                                </div>                                
+                                            </div>
+                
+                                            <div class="card-body content position-relative p-0 mt-3">
+                                                <a href="item-detail-one.html" class="title text-dark h6">Deep Sea Phantasy</a>
+                
+                                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                                    <div class="">
+                                                        <small class="mb-0 d-block fw-semibold">Current Bid:</small>
+                                                        <small class="rate fw-bold">20.5 ETH</small>
+                                                    </div>
+                                                    <a href="item-detail-one.html" class="btn btn-icon btn-pills btn-primary"><i class="uil uil-shopping-bag"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                
+                                    <div class="col">
+                                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="images/client/01.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    <a href="javascript:void(0)" class="text-dark small creator-name h6 mb-0 ms-2">@StreetBoyyy</a>
+                                                </div>
+                                            </div>
+                
+                                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                                <a href="item-detail-one.html"><img src="images/items/5.jpg" class="img-fluid" alt=""></a>
+                                                <div class="position-absolute top-0 start-0 m-2">
+                                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">Arts</a>
+                                                </div>
+                                                <div class="position-absolute top-0 end-0 m-2">
+                                                    <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                                </div>                                
+                                            </div>
+                
+                                            <div class="card-body content position-relative p-0 mt-3">
+                                                <a href="item-detail-one.html" class="title text-dark h6">CyberPrimal 042 LAN</a>
+                
+                                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                                    <div class="">
+                                                        <small class="mb-0 d-block fw-semibold">Current Bid:</small>
+                                                        <small class="rate fw-bold">20.5 ETH</small>
+                                                    </div>
+                                                    <a href="item-detail-one.html" class="btn btn-icon btn-pills btn-primary"><i class="uil uil-shopping-bag"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col">
+                                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="images/client/01.jpg" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                                    <a href="javascript:void(0)" class="text-dark small creator-name h6 mb-0 ms-2">@StreetBoyyy</a>
+                                                </div>
+                                            </div>
+                
+                                            <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
+                                                <a href="item-detail-one.html"><img src="images/gif/3.gif" class="img-fluid" alt=""></a>
+                                                <div class="position-absolute top-0 start-0 m-2">
+                                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">GIFs</a>
+                                                </div>
+                                                <div class="position-absolute top-0 end-0 m-2">
+                                                    <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                                </div>                                
+                                            </div>
+                
+                                            <div class="card-body content position-relative p-0 mt-3">
+                                                <a href="item-detail-one.html" class="title text-dark h6">Crypto Egg Stamp #5</a>
+                
+                                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                                    <div class="">
+                                                        <small class="mb-0 d-block fw-semibold">Current Bid:</small>
+                                                        <small class="rate fw-bold">20.5 ETH</small>
+                                                    </div>
+                                                    <a href="item-detail-one.html" class="btn btn-icon btn-pills btn-primary"><i class="uil uil-shopping-bag"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </div>
+
+                            <div class="tab-pane fade" id="Collection" role="tabpanel" aria-labelledby="Collection-tab">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-5 col-md-8 text-center">
+                                        <img src="images/svg/products-to-cart-or-basket.svg" class="img-fluid" alt="">
+
+                                        <div class="content mt-4">
+                                            <h5 class="mb-4">No Collection</h5>
+                                            <p class="text-muted">Save interesting shots into personalized collections, and discover new and interesting recommendations along the way.</p>
+                                        </div>
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </div>
+
+                            <div class="tab-pane fade" id="Activites" role="tabpanel" aria-labelledby="Activites-tab">
+                                <div class="row g-4">
+                                    <div class="col-12">
+                                        <div class="card activity activity-primary rounded-md shadow p-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/items/1.jpg" class="avatar avatar-md-md rounded-md shadow-md" alt="">
+    
+                                                    <div class="position-absolute top-0 start-0 translate-middle px-1 rounded-lg shadow-md bg-white">
+                                                        <i class="mdi mdi-account-check mdi-18px text-success"></i>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <span class="content ms-3">
+                                                    <a href="javascript:void(0)" class="text-dark title mb-0 h6 d-block">Digital Art Collection</a>
+                                                    <small class="text-muted d-block mt-1">Started Following <a href="javascript:void(0)" class="link fw-bold">@Panda</a></small>
+                                                    
+                                                    <small class="text-muted d-block mt-1">1 hours ago</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-12">
+                                        <div class="card activity activity-primary rounded-md shadow p-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/gif/1.gif" class="avatar avatar-md-md rounded-md shadow-md" alt="">
+    
+                                                    <div class="position-absolute top-0 start-0 translate-middle px-1 rounded-lg shadow-md bg-white">
+                                                        <i class="mdi mdi-heart mdi-18px text-danger"></i>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <span class="content ms-3">
+                                                    <a href="javascript:void(0)" class="text-dark title mb-1 h6 d-block">Skrrt Cobain Official</a>
+                                                    <small class="text-muted d-block mt-1">Liked by <a href="javascript:void(0)" class="link fw-bold">@ButterFly</a></small>
+                                                    
+                                                    <small class="text-muted d-block mt-1">2 hours ago</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-12">
+                                        <div class="card activity activity-primary rounded-md shadow p-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/items/2.jpg" class="avatar avatar-md-md rounded-md shadow-md" alt="">
+    
+                                                    <div class="position-absolute top-0 start-0 translate-middle px-1 rounded-lg shadow-md bg-white">
+                                                        <i class="mdi mdi-heart mdi-18px text-danger"></i>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <span class="content ms-3">
+                                                    <a href="javascript:void(0)" class="text-dark title mb-1 h6 d-block">Wow! That Brain Is Floating</a>
+                                                    <small class="text-muted d-block mt-1">Liked by <a href="javascript:void(0)" class="link fw-bold">@ButterFly</a></small>
+                                                    
+                                                    <small class="text-muted d-block mt-1">2 hours ago</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-12">
+                                        <div class="card activity activity-primary rounded-md shadow p-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/items/3.jpg" class="avatar avatar-md-md rounded-md shadow-md" alt="">
+    
+                                                    <div class="position-absolute top-0 start-0 translate-middle px-1 rounded-lg shadow-md bg-white">
+                                                        <i class="mdi mdi-format-list-bulleted mdi-18px text-warning"></i>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <span class="content ms-3">
+                                                    <a href="javascript:void(0)" class="text-dark title mb-1 h6 d-block">Our Journey Start</a>
+                                                    <small class="text-muted d-block mt-1">Listed by <a href="javascript:void(0)" class="link fw-bold">@CalvinCarlo</a></small>
+                                                    
+                                                    <small class="text-muted d-block mt-1">5 hours ago</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-12">
+                                        <div class="card activity activity-primary rounded-md shadow p-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/gif/2.gif" class="avatar avatar-md-md rounded-md shadow-md" alt="">
+    
+                                                    <div class="position-absolute top-0 start-0 translate-middle px-1 rounded-lg shadow-md bg-white">
+                                                        <i class="mdi mdi-heart mdi-18px text-danger"></i>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <span class="content ms-3">
+                                                    <a href="javascript:void(0)" class="text-dark title mb-1 h6 d-block">BitBears</a>
+                                                    <small class="text-muted d-block mt-1">Liked by <a href="javascript:void(0)" class="link fw-bold">@ButterFly</a></small>
+                                                    
+                                                    <small class="text-muted d-block mt-1">8 hours ago</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-12">
+                                        <div class="card activity activity-primary rounded-md shadow p-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/items/4.jpg" class="avatar avatar-md-md rounded-md shadow-md" alt="">
+    
+                                                    <div class="position-absolute top-0 start-0 translate-middle px-1 rounded-lg shadow-md bg-white">
+                                                        <i class="mdi mdi-heart mdi-18px text-danger"></i>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <span class="content ms-3">
+                                                    <a href="javascript:void(0)" class="text-dark title mb-1 h6 d-block">Little Kokeshi #13</a>
+                                                    <small class="text-muted d-block mt-1">Liked by <a href="javascript:void(0)" class="link fw-bold">@ButterFly</a></small>
+                                                    
+                                                    <small class="text-muted d-block mt-1">1 hours ago</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-12">
+                                        <div class="card activity activity-primary rounded-md shadow p-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/gif/3.gif" class="avatar avatar-md-md rounded-md shadow-md" alt="">
+    
+                                                    <div class="position-absolute top-0 start-0 translate-middle px-1 rounded-lg shadow-md bg-white">
+                                                        <i class="mdi mdi-account-check mdi-18px text-success"></i>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <span class="content ms-3">
+                                                    <a href="javascript:void(0)" class="text-dark title mb-1 h6 d-block">EVOL Floater</a>
+                                                    <small class="text-muted d-block mt-1">Started Following <a href="javascript:void(0)" class="link fw-bold">@CutieGirl</a></small>
+                                                    
+                                                    <small class="text-muted d-block mt-1">13 hours ago</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-12">
+                                        <div class="card activity activity-primary rounded-md shadow p-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/gif/4.gif" class="avatar avatar-md-md rounded-md shadow-md" alt="">
+    
+                                                    <div class="position-absolute top-0 start-0 translate-middle px-1 rounded-lg shadow-md bg-white">
+                                                        <i class="mdi mdi-format-list-bulleted mdi-18px text-warning"></i>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <span class="content ms-3">
+                                                    <a href="javascript:void(0)" class="text-dark title mb-1 h6 d-block">Smart Ape Club (SAC) - Limited Edition</a>
+                                                    <small class="text-muted d-block mt-1">Listed by <a href="javascript:void(0)" class="link fw-bold">@CalvinCarlo</a></small>
+                                                    
+                                                    <small class="text-muted d-block mt-1">18 hours ago</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-12">
+                                        <div class="card activity activity-primary rounded-md shadow p-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/gif/5.gif" class="avatar avatar-md-md rounded-md shadow-md" alt="">
+    
+                                                    <div class="position-absolute top-0 start-0 translate-middle px-1 rounded-lg shadow-md bg-white">
+                                                        <i class="mdi mdi-format-list-bulleted mdi-18px text-warning"></i>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <span class="content ms-3">
+                                                    <a href="javascript:void(0)" class="text-dark title mb-1 h6 d-block">THE SECRET SOCIETY XX #775</a>
+                                                    <small class="text-muted d-block mt-1">Listed by <a href="javascript:void(0)" class="link fw-bold">@CalvinCarlo</a></small>
+                                                    
+                                                    <small class="text-muted d-block mt-1">23 hours ago</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-12">
+                                        <div class="card activity activity-primary rounded-md shadow p-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/items/5.jpg" class="avatar avatar-md-md rounded-md shadow-md" alt="">
+    
+                                                    <div class="position-absolute top-0 start-0 translate-middle px-1 rounded-lg shadow-md bg-white">
+                                                        <i class="mdi mdi-heart mdi-18px text-danger"></i>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <span class="content ms-3">
+                                                    <a href="javascript:void(0)" class="text-dark title mb-1 h6 d-block">Create Your Own World</a>
+                                                    <small class="text-muted d-block mt-1">Liked by <a href="javascript:void(0)" class="link fw-bold">@ButterFly</a></small>
+                                                    
+                                                    <small class="text-muted d-block mt-1">24 hours ago</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                </div><!--end row-->
+    
+                                <div class="row">
+                                    <div class="col-12 text-center mt-4">
+                                        <a href="javascript:void(0)" class="btn btn-link primary text-dark">Load More <i class="uil uil-arrow-right"></i></a>
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </div>
+
+                            <div class="tab-pane fade" id="Followers" role="tabpanel" aria-labelledby="Followers-tab">
+                                <h5 class="mb-4">6 Followers</h5>
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="p-4 rounded-md shadow users user-primary">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/client/02.jpg" class="avatar avatar-md-md rounded-pill shadow-sm img-thumbnail" alt="">
+                                                    <div class="position-absolute bottom-0 end-0">
+                                                        <a href="javascript:void(0)" class="btn btn-icon btn-pills btn-sm btn-primary"><i class="uil uil-plus"></i></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="content ms-3">
+                                                    <h6 class="mb-0"><a href="creator-profile.html" class="text-dark name">CutieGirl</a></h6>
+                                                    <small class="text-muted d-flex align-items-center"><i class="uil uil-map-marker fs-5 me-1"></i> Brookfield, WI</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="border-top my-4"></div>
+                                            <div class="row row-cols-xl-6 g-3">
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/1.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/2.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/gif/3.gif" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/4.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/5.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/gif/4.gif" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-md-6">
+                                        <div class="p-4 rounded-md shadow users user-primary">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/client/13.jpg" class="avatar avatar-md-md rounded-pill shadow-sm img-thumbnail" alt="">
+                                                    <div class="position-absolute bottom-0 end-0">
+                                                        <a href="javascript:void(0)" class="btn btn-icon btn-pills btn-sm btn-primary"><i class="uil uil-plus"></i></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="content ms-3">
+                                                    <h6 class="mb-0"><a href="creator-profile.html" class="text-dark name">FunnyGuy</a></h6>
+                                                    <small class="text-muted d-flex align-items-center"><i class="uil uil-map-marker fs-5 me-1"></i> Brookfield, WI</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="border-top my-4"></div>
+                                            <div class="row row-cols-xl-6 g-3">
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/3.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/gif/1.gif" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/9.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/6.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/1.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/gif/2.gif" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-md-6">
+                                        <div class="p-4 rounded-md shadow users user-primary">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/client/03.jpg" class="avatar avatar-md-md rounded-pill shadow-sm img-thumbnail" alt="">
+                                                    <div class="position-absolute bottom-0 end-0">
+                                                        <a href="javascript:void(0)" class="btn btn-icon btn-pills btn-sm btn-primary"><i class="uil uil-plus"></i></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="content ms-3">
+                                                    <h6 class="mb-0"><a href="creator-profile.html" class="text-dark name">NorseQueen</a></h6>
+                                                    <small class="text-muted d-flex align-items-center"><i class="uil uil-map-marker fs-5 me-1"></i> Brookfield, WI</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="border-top my-4"></div>
+                                            <div class="row row-cols-xl-6 g-3">
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/gif/5.gif" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/2.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/gif/6.gif" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/4.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/5.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-md-6">
+                                        <div class="p-4 rounded-md shadow users user-primary">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/client/04.jpg" class="avatar avatar-md-md rounded-pill shadow-sm img-thumbnail" alt="">
+                                                    <div class="position-absolute bottom-0 end-0">
+                                                        <a href="javascript:void(0)" class="btn btn-icon btn-pills btn-sm btn-primary"><i class="uil uil-plus"></i></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="content ms-3">
+                                                    <h6 class="mb-0"><a href="creator-profile.html" class="text-dark name">BigBull</a></h6>
+                                                    <small class="text-muted d-flex align-items-center"><i class="uil uil-map-marker fs-5 me-1"></i> Brookfield, WI</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="border-top my-4"></div>
+                                            <div class="row row-cols-xl-6 g-3">
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/7.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/8.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/9.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/10.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-md-6">
+                                        <div class="p-4 rounded-md shadow users user-primary">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/client/10.jpg" class="avatar avatar-md-md rounded-pill shadow-sm img-thumbnail" alt="">
+                                                    <div class="position-absolute bottom-0 end-0">
+                                                        <a href="javascript:void(0)" class="btn btn-icon btn-pills btn-sm btn-primary"><i class="uil uil-plus"></i></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="content ms-3">
+                                                    <h6 class="mb-0"><a href="creator-profile.html" class="text-dark name">KristyHoney</a></h6>
+                                                    <small class="text-muted d-flex align-items-center"><i class="uil uil-map-marker fs-5 me-1"></i> Brookfield, WI</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="border-top my-4"></div>
+                                            <div class="row row-cols-xl-6 g-3">
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/1.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/2.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/3.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/4.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/5.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/6.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-md-6">
+                                        <div class="p-4 rounded-md shadow users user-primary">
+                                            <div class="d-flex align-items-center">
+                                                <div class="position-relative">
+                                                    <img src="images/client/12.jpg" class="avatar avatar-md-md rounded-pill shadow-sm img-thumbnail" alt="">
+                                                    <div class="position-absolute bottom-0 end-0">
+                                                        <a href="javascript:void(0)" class="btn btn-icon btn-pills btn-sm btn-primary"><i class="uil uil-plus"></i></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="content ms-3">
+                                                    <h6 class="mb-0"><a href="creator-profile.html" class="text-dark name">Princess</a></h6>
+                                                    <small class="text-muted d-flex align-items-center"><i class="uil uil-map-marker fs-5 me-1"></i> Brookfield, WI</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="border-top my-4"></div>
+                                            <div class="row row-cols-xl-6 g-3">
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/5.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/8.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/4.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/7.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/5.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                                
+                                                <div class="col">
+                                                    <a href="item-detail-one.html" class="user-item"><img src="images/items/10.jpg" class="img-fluid rounded-md shadow-sm" alt=""></a>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div>
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </div>
+
+                            <div class="tab-pane fade" id="About" role="tabpanel" aria-labelledby="About-tab">
+                                <h5 class="mb-4">Calvin Carlo</h5>
+
+                                <p class="text-muted mb-0">I have started my career as a trainee and prove my self and achieve all the milestone with good guidance and reach up to the project manager. In this journey, I understand all the procedure which make me a good developer, team leader, and a project manager.</p>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- End Home -->
+
+        <!-- Footer Start -->
+        <footer class="bg-footer">
+            <div class="py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-7 col-md-6">
+                            <h5 class="text-light fw-normal title-dark">Download the Superex app to explore any NFTs</h5>
+                            
+                            <div class="mt-4">
+                                <a href=""><img src="images/app.png" height="40" alt=""></a>
+                                <a href="" class="ms-2"><img src="images/playstore.png" height="40" alt=""></a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-5 col-md-6 mt-4 mt-sm-0">
+                            <h5 class="text-light fw-normal title-dark">Join Superex community</h5>
+
+                            <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-facebook-f"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-instagram"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-linkedin"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-dribbble"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-twitter"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-skype"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-telegram"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-slack"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-tumblr"></i></a></li>
+                                <li class="list-inline-item lh-1"><a href="" class="rounded"><i class="uil uil-whatsapp"></i></a></li>
+                            </ul>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end container-->
+            </div><!--end div-->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-py-60 footer-border">
+                            <div class="row">
+                                <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                                    <a href="#" class="logo-footer">
+                                        <img src="images/icon-logo-64.png" alt="">
+                                    </a>
+                                    <p class="para-desc mb-0 mt-4">Buy, sell and discover exclusive digital assets by the top artists of NFTs world.</p>
+                                
+                                    
+                                </div><!--end col-->
+                                
+                                <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">Superex</h5>
+                                    <ul class="list-unstyled footer-list mt-4">
+                                        <li><a href="explore-two.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Explore</a></li>
+                                        <li><a href="auction.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Live Auction</a></li>
+                                        <li><a href="activity.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Activities</a></li>
+                                        <li><a href="wallet.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Wallet</a></li>
+                                        <li><a href="creators.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Creators</a></li>
+                                    </ul>
+                                </div><!--end col-->
+                                
+                                <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">Community</h5>
+                                    <ul class="list-unstyled footer-list mt-4">
+                                        <li><a href="aboutus.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> About Us</a></li>
+                                        <li><a href="blogs.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Blog</a></li>
+                                        <li><a href="terms.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Terms & Conditions</a></li>
+                                        <li><a href="privacy.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Privacy Policy</a></li>
+                                        <li><a href="login.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Login</a></li>
+                                        <li><a href="mailto:contact@example.com" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Subscribe</a></li>
+                                        <li><a href="contact.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Contact</a></li>
+                                    </ul>
+                                </div><!--end col-->
+            
+                                <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">Newsletter</h5>
+                                    <p class="mt-4">Sign up and receive the latest tips via email.</p>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="foot-subscribe mb-3">
+                                                    <label class="form-label">Write your email <span class="text-danger">*</span></label>
+                                                    <div class="form-icon position-relative">
+                                                        <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                        <input type="email" name="email" id="emailsubscribe" class="form-control ps-5 rounded" placeholder="Your email : " required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="d-grid">
+                                                    <input type="submit" id="submitsubscribe" name="send" class="btn btn-soft-primary" value="Subscribe">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            <div class="footer-py-30 footer-bar">
+                <div class="container text-center">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <div class="text-sm-start">
+                                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Superex. Design with <i class="mdi mdi-heart text-danger"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
+                            </div>
+                        </div><!--end col-->
+    
+                        <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                            <ul class="list-unstyled footer-list text-sm-end mb-0">
+                                <li class="list-inline-item mb-0"><a href="privacy.html" class="text-foot me-2">Privacy</a></li>
+                                <li class="list-inline-item mb-0"><a href="terms.html" class="text-foot me-2">Terms</a></li>
+                                <li class="list-inline-item mb-0"><a href="helpcenter-overview.html" class="text-foot me-2">Help Center</a></li>
+                                <li class="list-inline-item mb-0"><a href="contact.html" class="text-foot">Contact</a></li>
+                            </ul>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end container-->
+            </div>
+        </footer><!--end footer-->
+        <!-- Footer End -->
+
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top rounded-pill fs-5"><i data-feather="arrow-up" class="fea icon-sm icons align-middle"></i></a>
+        <!-- Back to top -->
+
+        <!-- Wallet Modal -->
+        <div class="modal fade" id="modal-metamask" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">                    
+                <div class="modal-content justify-content-center border-0 shadow-md rounded-md position-relative">
+                    <div class="position-absolute top-0 start-100 translate-middle z-index-1">
+                        <button type="button" class="btn btn-icon btn-pills btn-sm btn-light btn-close opacity-10" data-bs-dismiss="modal" id="close-modal"><i class="uil uil-times fs-4"></i></button>
+                    </div>
+
+                    <div class="modal-body p-4 text-center">
+                        <img src="images/wallet/MetaMask_Fox.svg" class="avatar avatar-md-md rounded-circle shadow-sm " alt="">
+
+                        <div class="content mt-4">
+                            <h5 class="text-danger mb-4">Error!</h5>
+
+                            <P class="text-muted">Please Download MetaMask and create your profile and wallet in MetaMask. Please click and check the details,</P>
+
+                            <a href="https://metamask.io/" class="btn btn-link primary text-primary fw-bold" target="_blank">MetaMask</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Wallet Modal -->
+
+        <!-- Style switcher -->
+        <div id="style-switcher" class="bg-light border p-3 pt-2 pb-2" onclick="toggleSwitcher()">
+            <div class="content">
+                <h6 class="title text-center">Select Your Color</h6>
+                <ul class="pattern">
+                    <li class="list-inline-item">
+                        <a class="color1" href="javascript: void(0);" onclick="setColor('default')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color2" href="javascript: void(0);" onclick="setColor('yellow')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color3" href="javascript: void(0);" onclick="setColor('green')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color4" href="javascript: void(0);" onclick="setColor('red')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color5" href="javascript: void(0);" onclick="setColor('purple')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color6" href="javascript: void(0);" onclick="setColor('saffron')"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="color7" href="javascript: void(0);" onclick="setColor('pink')"></a>
+                    </li>
+                </ul>
+
+                <h6 class="title text-center pt-3 mb-0 border-top">Theme Option</h6>
+                <ul class="text-center list-unstyled mb-0">
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary rtl-version t-rtl-light mt-2" onclick="setTheme('style-rtl')">RTL</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary ltr-version t-ltr-light mt-2" onclick="setTheme('style')">LTR</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary dark-rtl-version t-rtl-dark mt-2" onclick="setTheme('style-dark-rtl')">RTL</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-primary dark-ltr-version t-ltr-dark mt-2" onclick="setTheme('style-dark')">LTR</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-dark dark-version t-dark mt-2" onclick="setTheme('style-dark')">Dark</a></li>
+                    <li class="d-grid"><a href="javascript:void(0)" class="btn btn-sm btn-block btn-dark light-version t-light mt-2" onclick="setTheme('style')">Light</a></li>
+                </ul>
+
+                <h6 class="title text-center pt-3 mb-0 border-top">Download</h6>
+                <ul class="text-center list-unstyled mb-0">
+                    <li><a href="https://1.envato.market/superex" target="_blank" class="btn btn-sm btn-block btn-warning mt-2 w-100">Download</a></li>
+                </ul>
+            </div>
+            <div class="bottom p-0">
+                <a href="javascript: void(0);" class="settings bg-white title-bg-dark shadow d-flex align-items-center justify-content-center"><i class="mdi mdi-cog mdi-24px position-absolute mdi-spin text-primary"></i></a>
+            </div>
+        </div>
+        <!-- end Style switcher -->
+        
+        <!-- javascript -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/feather.min.js"></script>
+        <!-- Main Js -->
+        <script src="js/plugins.init.js"></script>
+        <script src="js/app.js"></script>
+        
+    </body>
+
+</html>

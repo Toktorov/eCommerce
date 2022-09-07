@@ -1,0 +1,174 @@
+{% load static %}
+<header id="topnav" class="defaultscroll sticky">
+    <div class="container">
+        <!-- Logo Start-->
+        <a class="logo" href="{% url 'index' %}">
+            <span class="logo-light-mode">
+                <img src="{{ setting.logo.url }}" height="26" class="l-dark" alt="">
+                <img src="{{ setting.logo.url }}" height="26" class="l-light" alt="">
+            </span>
+            <img src="{{ setting.logo.url }}" height="26" class="logo-dark-mode" alt="">
+        </a>
+        <!-- Logo end-->
+
+        <!-- Mobile -->
+        <div class="menu-extras">
+            <div class="menu-item">
+                <!-- Mobile menu toggle-->
+                <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                    <div class="lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+                <!-- End mobile menu toggle-->
+            </div>
+        </div>
+        <!-- Mobile -->
+
+        <!--Login button Start-->
+        <ul class="buy-button list-inline mb-0">
+            <li class="list-inline-item mb-0 me-1">
+                <div class="dropdown">
+                    <button type="button" class="btn dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="uil uil-search text-white title-dark btn-icon-light fs-5 align-middle"></i>
+                        <i class="uil uil-search text-dark btn-icon-dark fs-5 align-middle"></i>
+                    </button>
+                    <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 p-0" style="width: 300px;">
+                        <div class="search-bar">
+                            <div id="itemSearch" class="menu-search mb-0">
+                                <form role="search" method="get" id="searchItemform" class="searchform">
+                                    <input type="text" class="form-control border rounded shadow" name="s" id="s" placeholder="Search...">
+                                    <input type="submit" id="searchItemsubmit" value="Search">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="list-inline-item mb-0 me-1">
+                <a id="connectWallet">
+                    <span class="btn-icon-dark"><span class="btn btn-icon btn-pills btn-primary"><i class="uil uil-wallet fs-6"></i></span></span>
+                    <span class="btn-icon-light"><span class="btn btn-icon btn-pills btn-light"><i class="uil uil-wallet fs-6"></i></span></span>
+                </a>
+            </li>
+            
+            <li class="list-inline-item mb-0">
+                <div class="dropdown dropdown-primary">
+                    <button type="button" class="btn btn-pills dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{% static 'images/client/01.jpg' %}" class="rounded-pill avatar avatar-sm-sm" alt=""></button>
+                    <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 pb-3 pt-0 overflow-hidden rounded" style="min-width: 200px;">
+                        <div class="position-relative">
+                            <div class="pt-5 pb-3 bg-gradient-primary"></div>
+                            <div class="px-3">
+                                <div class="d-flex align-items-end mt-n4">
+                                    <img src="{% static 'images/client/01.jpg' %}" class="rounded-pill avatar avatar-md-sm img-thumbnail shadow-md" alt="">
+                                    <h6 class="text-dark fw-bold mb-0 ms-1">Calvin Carlo</h6>
+                                </div>
+                                <div class="mt-2">
+                                    <small class="text-start text-dark d-block fw-bold">Wallet:</small>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small id="myPublicAddress" class="text-muted">qhut0...hfteh45</small>
+                                        <a href="" class="text-primary"><span class="uil uil-copy"></span></a>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-2">
+                                    <small class="text-dark">Balance: <span class="text-primary fw-bold">0.00045ETH</span></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-user align-middle h6 mb-0 me-1"></i></span> Profile</a>
+                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile-edit.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Settings</a>
+                            <div class="dropdown-divider border-top"></div>
+                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="lock-screen.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6 mb-0 me-1"></i></span> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!--Login button End-->
+
+        <div id="navigation">
+            <!-- Navigation Menu-->   
+            <ul class="navigation-menu nav-left nav-light">
+                <li class="has-submenu parent-parent-menu-item">
+                    <a href="{% url 'index' %}">Домой</a>
+                    
+                    
+                </li>
+                
+                <li class="has-submenu parent-parent-menu-item">
+                    <a href="javascript:void(0)">Explore</a><span class="menu-arrow"></span>
+                    <ul class="submenu">
+                        <li><a href="explore-one.html" class="sub-menu-item"> Explore One</a></li>
+                        <li><a href="explore-two.html" class="sub-menu-item"> Explore Two</a></li>
+                        <li><a href="explore-three.html" class="sub-menu-item"> Explore Three</a></li>
+                        <li><a href="explore-four.html" class="sub-menu-item"> Explore Four</a></li>
+                        <li><a href="auction.html" class="sub-menu-item">Live Auction</a></li>
+                        <li><a href="item-detail-one.html" class="sub-menu-item"> Item Detail One</a></li>
+                        <li><a href="item-detail-two.html" class="sub-menu-item"> Item Detail Two</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="activity.html" class="sub-menu-item"> Activity</a></li>
+
+                <li><a href="wallet.html" class="sub-menu-item">Wallet</a></li>
+
+                <li class="has-submenu parent-parent-menu-item">
+                    <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
+                    <ul class="submenu">
+                        <li><a href="aboutus.html" class="sub-menu-item">About Us</a></li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Creator </a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="creators.html" class="sub-menu-item"> Creators</a></li>
+                                <li><a href="creator-profile.html" class="sub-menu-item"> Creator Profile</a></li>
+                                <li><a href="creator-profile-edit.html" class="sub-menu-item"> Profile Edit</a></li>
+                                <li><a href="become-creator.html" class="sub-menu-item"> Become Creator</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="collections.html" class="sub-menu-item">Collections</a></li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Blog </a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="blogs.html" class="sub-menu-item"> Blogs</a></li>
+                                <li><a href="blog-sidebar.html" class="sub-menu-item"> Blog with sidebar</a></li>
+                                <li><a href="blog-detail.html" class="sub-menu-item"> Blog Detail</a></li>
+                            </ul> 
+                        </li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Auth Pages </a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="login.html" class="sub-menu-item"> Login</a></li>
+                                <li><a href="signup.html" class="sub-menu-item"> Signup</a></li>
+                                <li><a href="reset-password.html" class="sub-menu-item"> Forgot Password</a></li>
+                                <li><a href="lock-screen.html" class="sub-menu-item"> Lock Screen</a></li>
+                            </ul> 
+                        </li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Special <span class="badge bg-warning">NEW</span> </a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="comingsoon.html" class="sub-menu-item"> Coming Soon</a></li>
+                                <li><a href="maintenance.html" class="sub-menu-item"> Maintenance</a></li>
+                                <li><a href="error.html" class="sub-menu-item"> 404!</a></li>
+                            </ul> 
+                        </li>
+                        <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Help Center <span class="badge bg-warning">NEW</span> </a><span class="submenu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="helpcenter-overview.html" class="sub-menu-item"> Overview</a></li>
+                                <li><a href="helpcenter-faqs.html" class="sub-menu-item"> FAQs</a></li>
+                                <li><a href="helpcenter-guides.html" class="sub-menu-item"> Guides</a></li>
+                                <li><a href="helpcenter-support-request.html" class="sub-menu-item"> Support</a></li>
+                            </ul> 
+                        </li>
+                        <li><a href="upload-work.html" class="sub-menu-item">Upload Works</a></li>
+                        <li><a href="terms.html" class="sub-menu-item">Terms Policy</a></li>
+                        <li><a href="privacy.html" class="sub-menu-item">Privacy Policy</a></li>
+                        <li><a href="changelog.html" class="sub-menu-item">Changelog</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="contact.html" class="sub-menu-item">Contact</a></li>
+            </ul><!--end navigation menu-->
+        </div><!--end navigation-->
+    </div><!--end container-->
+</header><!--end header-->
