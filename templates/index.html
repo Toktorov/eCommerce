@@ -362,13 +362,9 @@
                             <div class="d-flex justify-content-between">
                                 <div class="img-group">
                                     <a href="creator-profile.html" class="user-avatar">
-                                        <img src="{% static 'images/client/08.jpg' %}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                        <img src="{{ product.user.profile_image.url }}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
                                     </a>
-                                    <a href="creator-profile.html" class="user-avatar ms-n3">
-                                        <img src="{% static 'images/client/05.jpg' %}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
-                                    </a>
-                                    <a href="creator-profile.html" class="user-avatar ms-n3">
-                                        <img src="{% static 'images/client/06.jpg' %}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    
                                     </a>
                                 </div>
                                 
@@ -378,7 +374,7 @@
                             <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
                                 <a href="{% url 'product_detail' product.id %}"><img src="{{ product.product_image.url }}" class="img-fluid" alt=""></a>
                                 <div class="position-absolute top-0 start-0 m-2">
-                                    <a href="{% url 'product_detail' product.id %}" class="badge badge-link bg-primary">GIFs</a>
+                                    <a href="{% url 'product_detail' product.id %}" class="badge badge-link bg-primary">{{ product.category.title }}</a>
                                 </div>
 
                                 <div class="position-absolute top-0 end-0 m-2">
@@ -394,8 +390,8 @@
                                 <a href="{% url 'product_detail' product.id %}" class="title text-dark h6">{{ product.title }}</a>
 
                                 <div class="d-flex justify-content-between mt-2">
-                                    <small class="rate fw-bold">{{ product.price }} сом</small>
-                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                    <small class="rate fw-bold">{{ product.price }} {{ product.currency }}</small>
+                                    <small class="text-dark fw-bold">{{ product.created|truncatewords:1 }}</small>
                                 </div>
                             </div>
                         </div>

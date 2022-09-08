@@ -34,19 +34,9 @@
     
                             <div class="row">
                                 <div class="col-md-6 mt-4 pt-2">
-                                    <h6>Current Bid</h6>
-                                    <h4 class="mb-0">{{ product.price }} сом</h4>
-                                    <small class="mb-0 text-muted">$1300USD</small>
-                                </div>
-    
-                                <div class="col-md-6 mt-4 pt-2">
-                                    <h6>Auction Ending In</h6>
-                                    <h4 id="auction-item-8" class="fw-bold mb-0"></h4>
-                                </div>
-
-                                <div class="col-12 mt-4 pt-2">
-                                    <a href="#" class="btn btn-l btn-pills btn-primary me-2" data-bs-toggle="modal" data-bs-target="#NftBid"><i class="mdi mdi-gavel fs-5 me-2"></i> Place a Bid</a>
-                                    <a href="#" class="btn btn-l btn-pills btn-primary" data-bs-toggle="modal" data-bs-target="#NftBuynow"><i class="mdi mdi-cart fs-5 me-2"></i> Buy Now</a>
+                                    <h6>Цена товара</h6>
+                                    <h4 class="mb-0">{{ product.price }} {{ product.currency }}</h4>
+                                    <small class="mb-0 text-muted">Категория {{ product.category.title }}</small>
                                 </div>
                             </div>
 
@@ -54,7 +44,7 @@
                                 <div class="col-12">
                                     <ul class="nav nav-tabs border-bottom" id="myTab" role="tablist">
                                         <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detailItem" type="button" role="tab" aria-controls="detailItem" aria-selected="true">Details</button>
+                                            <button class="nav-link active" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detailItem" type="button" role="tab" aria-controls="detailItem" aria-selected="true">Описание</button>
                                         </li>
                                         
                                         <li class="nav-item" role="presentation">
@@ -74,14 +64,14 @@
             
                                             <div class="creators creator-primary d-flex align-items-center">
                                                 <div class="position-relative">
-                                                    <img src="{% static 'images/client/09.jpg' %}" class="avatar avatar-md-sm shadow-md rounded-pill" alt="">
+                                                    <img src="{{ product.user.profile_image.url }}" class="avatar avatar-md-sm shadow-md rounded-pill" alt="">
                                                     <span class="verified text-primary">
                                                         <i class="mdi mdi-check-decagram"></i>
                                                     </span>
                                                 </div>
                 
                                                 <div class="ms-3">
-                                                    <h6 class="mb-0"><a href="creators.html" class="text-dark name">PandaOne</a></h6>
+                                                    <h6 class="mb-0"><a href="creators.html" class="text-dark name">{{ product.user.username }}</a></h6>
                                                 </div>
                                             </div>
                                         </div>
