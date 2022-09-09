@@ -7,7 +7,8 @@ class User(AbstractUser):
     profile_image = models.ImageField(
         upload_to = "profile_image/",
         verbose_name="Фотография профиля",
-        blank = True, null = True
+        blank = True, null = True,
+        default = "profile_image/no_image.png"
     )
     phone = models.CharField(
         max_length=100,

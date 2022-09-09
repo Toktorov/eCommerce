@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="utf-8" />
-        <title>Superex - NFT Marketplace HTML Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="NFT Marketplace Website Template" />
-        <meta name="keywords" content="blockchain nft, collectibles, crypto, crypto art, crypto asset, crypto marketplace, digital, item, NFT, NFT assets, NFT Gaming, nft marketplace, token, wallet" />
-        <meta content="Shreethemes" name="author" />
-        <meta content="support@shreethemes.in" name="Email" />
-        <meta content="https://shreethemes.in/" name="Website" />
-        <!-- favicon -->
-        <link rel="shortcut icon" href="images/favicon.ico">
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-        <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
-        <!-- Main css -->
-        <link href="css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
-        <link href="css/colors/default.css" rel="stylesheet" id="color-opt">
-    </head>
-
-    <body>
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
         <!-- Loader -->
         <!-- <div id="preloader">
             <div id="status">
@@ -53,27 +32,28 @@
                         <div class="d-flex flex-column min-vh-100 p-4">
                             <!-- Start Logo -->
                             <div class="text-center">
-                                <a href=""><img src="images/logo-white.png" alt=""></a>
+                                <a href=""><img src="{{ setting.logo.url }}" width="10%" alt=""></a>
                             </div>
                             <!-- End Logo -->
 
                             <!-- Start Content -->
                             <div class="title-heading text-center my-auto">
                                 <div class="form-signin px-4 py-5 bg-white rounded-md shadow-sm">
-                                    <form>
-                                        <h5 class="mb-4">Login</h5>
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        <h5 class="mb-4">Войти</h5>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-floating mb-2">
-                                                    <input type="email" class="form-control" id="LoginEmail" placeholder="name@example.com">
-                                                    <label for="LoginEmail">Email Address:</label>
+                                                    <input type="text" class="form-control" name = "username" id="LoginEmail" placeholder="name@example.com">
+                                                    <label for="LoginEmail">Имя пользователя:</label>
                                                 </div>
                                             </div><!--end col-->
 
                                             <div class="col-lg-12">
                                                 <div class="form-floating mb-3">
-                                                    <input type="password" class="form-control" id="LoginPassword" placeholder="Password">
-                                                    <label for="LoginPassword">Password:</label>
+                                                    <input type="password" class="form-control" name = "password" id="LoginPassword" placeholder="Password">
+                                                    <label for="LoginPassword">Пароль:</label>
                                                 </div>
                                             </div><!--end col-->
                                     
@@ -82,15 +62,15 @@
                                                     <div class="mb-3">
                                                         <div class="form-check align-items-center d-flex mb-0">
                                                             <input class="form-check-input mt-0" type="checkbox" value="" id="RememberMe">
-                                                            <label class="form-check-label text-muted ms-2" for="RememberMe">Remember me</label>
+                                                            <label class="form-check-label text-muted ms-2" for="RememberMe">Запомнить меня</label>
                                                         </div>
                                                     </div>
-                                                    <small class="text-muted mb-0"><a href="reset-password.html" class="text-muted fw-semibold">Forgot password ?</a></small>
+                                                    <small class="text-muted mb-0"><a href="reset-password.html" class="text-muted fw-semibold">Забыли пароль?</a></small>
                                                 </div>
                                             </div><!--end col-->
                         
                                             <div class="col-lg-12">
-                                                <button class="btn btn-primary rounded-md w-100" type="submit">Sign in</button>
+                                                <button class="btn btn-primary rounded-md w-100" type="submit">Войти</button>
                                             </div><!--end col-->
         
                                             <div class="col-12 text-center mt-4">
@@ -163,13 +143,4 @@
         </div>
         <!-- end Style switcher -->
         
-        <!-- javascript -->
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/feather.min.js"></script>
-        <!-- Main Js -->
-        <script src="js/plugins.init.js"></script>
-        <script src="js/app.js"></script>
-        
-    </body>
-
-</html>
+{% endblock %}

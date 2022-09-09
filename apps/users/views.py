@@ -24,4 +24,18 @@ def register(request):
     context = {
         'setting' : setting,
     }
-    return render(request, 'signup.html', context)
+    return render(request, 'users/signup.html', context)
+
+def user_login(request):
+    setting = Setting.objects.latest('id')
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = User.objects.get(username = username)
+        user = authenticate(username = username, password = password)
+        login(request, user)
+        return redirect('index')
+    context = {
+        'setting' : setting,
+    }
+    return render(request, 'users/login.html', context)
