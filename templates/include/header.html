@@ -58,14 +58,14 @@
             <li class="list-inline-item mb-0">
                 <div class="dropdown dropdown-primary">
                     {% if user.is_authenticated %}
-                    <button type="button" class="btn btn-pills dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{% static 'images/client/01.jpg' %}" class="rounded-pill avatar avatar-sm-sm" alt=""></button>
+                    <button type="button" class="btn btn-pills dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ request.user.profile_image.url }}" class="rounded-pill avatar avatar-sm-sm" alt=""></button>
                     
                     <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 pb-3 pt-0 overflow-hidden rounded" style="min-width: 200px;">
                         <div class="position-relative">
                             <div class="pt-5 pb-3 bg-gradient-primary"></div>
                             <div class="px-3">
                                 <div class="d-flex align-items-end mt-n4">
-                                    <img src="{% static 'images/client/01.jpg' %}" class="rounded-pill avatar avatar-md-sm img-thumbnail shadow-md" alt="">
+                                    <img src="{{ request.user.profile_image.url }}" class="rounded-pill avatar avatar-md-sm img-thumbnail shadow-md" alt="">
                                     <h6 class="text-dark fw-bold mb-0 ms-1">{{ request.user.username }}</h6>
                                 </div>
                                 <div class="mt-2">
@@ -82,8 +82,8 @@
                             </div>
                         </div>
                         <div class="mt-2">
-                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-user align-middle h6 mb-0 me-1"></i></span> Profile</a>
-                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile-edit.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Settings</a>
+                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="{% url 'profile' request.user.id %}"><span class="mb-0 d-inline-block me-1"><i class="uil uil-user align-middle h6 mb-0 me-1"></i></span> Профиль</a>
+                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile-edit.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Настройки</a>
                             <div class="dropdown-divider border-top"></div>
                             <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="{% url 'logout' %}"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6 mb-0 me-1"></i></span> Выйти</a>
                         </div>

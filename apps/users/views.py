@@ -39,3 +39,12 @@ def user_login(request):
         'setting' : setting,
     }
     return render(request, 'users/login.html', context)
+
+def profile(request, id):
+    user = User.objects.get(id = id)
+    setting = Setting.objects.latest('id')
+    context = {
+        'user' : user,
+        'setting' : setting
+    }
+    return render(request, 'users/creator-profile.html', context)
