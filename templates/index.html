@@ -35,45 +35,41 @@
 
                     <div class="col-lg-5 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
                         <div class="card bg-white nft-items nft-primary img-skewed rounded-md shadow overflow-hidden mb-1 p-3">
+                            {% for random in random_product %}
                             <div class="d-flex justify-content-between">
                                 <div class="img-group">
-                                    <a href="creator-profile.html" class="user-avatar">
-                                        <img src="{% static 'images/client/08.jpg' %}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                    <a href="{% url 'profile' random.user.id %}" class="user-avatar">
+                                        <img src="{{ random.user.profile_image.url }}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
                                     </a>
-                                    <a href="creator-profile.html" class="user-avatar ms-n3">
-                                        <img src="{% static 'images/client/05.jpg' %}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
-                                    </a>
-                                    <a href="creator-profile.html" class="user-avatar ms-n3">
-                                        <img src="{% static 'images/client/06.jpg' %}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
-                                    </a>
+                                    
                                 </div>
                                 
-                                <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
+                                <span class="like-icon shadow-sm"><a href="{% url 'product_detail' random.id %}" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
                             </div>
 
                             <div class="nft-image rounded-md mt-3 position-relative overflow-hidden shadow">
-                                <a href="item-detail-one.html"><img src="{% static 'images/gif/4.gif' %}" class="img-fluid" alt=""></a>
+                                <a href="{% url 'product_detail' random.id %}"><img src="{{ random.product_image.url }}" class="img-fluid" alt=""></a>
                                 <div class="position-absolute top-0 start-0 m-2">
-                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">GIFs</a>
+                                    <a href="{% url 'product_detail' random.id %}" class="badge badge-link bg-primary">{{ random.category.title }}</a>
                                 </div>
 
                                 <div class="position-absolute top-0 end-0 m-2">
-                                    <a href="item-detail-one.html" class="btn btn-pills btn-icon"><i class="uil uil-shopping-cart-alt"></i></a>
+                                    <a href="{% url 'product_detail' random.id %}" class="btn btn-pills btn-icon"><i class="uil uil-shopping-cart-alt"></i></a>
                                 </div>
 
-                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-primary text-white title-dark rounded-pill px-3 h5">
-                                    <i class="uil uil-clock"></i> <small id="auction-item-9" class="fw-bold"></small>
-                                </div>
+                                
                             </div>
 
                             <div class="card-body content position-relative p-0 mt-3">
-                                <a href="item-detail-one.html" class="title text-dark h5">Deep Sea Phantasy</a>
+                                <a href="{% url 'product_detail' random.id %}" class="title text-dark h5">{{ random.title }}</a>
 
                                 <div class="d-flex justify-content-between mt-2">
-                                    <small class="rate fw-bold">20.5 ETH</small>
-                                    <small class="text-dark fw-bold">1 out of 10</small>
+                                    <small class="rate fw-bold">{{ random.price }} {{ random.currency }}</small>
+                                    <small class="text-dark fw-bold">{{ random.created }}</small>
                                 </div>
                             </div>
+                            {% endfor %}
+                            
                         </div>
                     </div><!--end slide-->
                 </div><!--end row-->
@@ -94,7 +90,7 @@
 
                     <div class="col-md-4">
                         <div class="text-end d-md-block d-none">
-                            <a href="creators.html" class="btn btn-link primary text-dark">See More <i class="uil uil-arrow-right"></i></a>
+                            <a href="creators.html" class="btn btn-link primary text-dark">Узнать больше <i class="uil uil-arrow-right"></i></a>
                         </div>
                     </div><!--end slide-->
                 </div><!--end row-->
@@ -151,11 +147,9 @@
                         <div class="filters-group">
                             <ul class="container-filter mb-0 categories-filter text-center list-unstyled filter-options">
                                 <li class="list-inline-item categories position-relative text-dark active" data-group="all"><i class="uil uil-browser"></i> All</li>
-                                <li class="list-inline-item categories position-relative text-dark" data-group="games"><i class="uil uil-volleyball"></i> Games</li>
-                                <li class="list-inline-item categories position-relative text-dark" data-group="art"><i class="uil uil-chart-pie-alt"></i> Art</li>
-                                <li class="list-inline-item categories position-relative text-dark" data-group="music"><i class="uil uil-music"></i> Music</li>
-                                <li class="list-inline-item categories position-relative text-dark" data-group="video"><i class="uil uil-camera-plus"></i> Video</li>
-                                <li class="list-inline-item categories position-relative text-dark" data-group="memes"><i class="uil uil-rocket"></i> Memes</li>
+                                {% for category in categories %}
+                                <li class="list-inline-item categories position-relative text-dark" data-group="{{ category.title }}">{{ category.title }}</li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div><!--end col-->
@@ -163,7 +157,7 @@
 
                 <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 g-4" id="grid">
                     {% for product in products %}
-                    <div class="col picture-item" data-groups='["games"]'>
+                    <div class="col picture-item" data-groups='["{{ product.category.title }}"]'>
                         <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
                             <div class="d-flex justify-content-between">
                                 <div class="img-group">
@@ -187,9 +181,7 @@
                                     <a href="{% url 'product_detail' product.id %}" class="btn btn-pills btn-icon"><i class="uil uil-shopping-cart-alt"></i></a>
                                 </div>
 
-                                <div class="position-absolute bottom-0 start-0 m-2 bg-gradient-primary text-white title-dark rounded-pill px-3">
-                                    <i class="uil uil-clock"></i> <small id="auction-item-1" class="fw-bold"></small>
-                                </div>
+                               
                             </div>
 
                             <div class="card-body content position-relative p-0 mt-3">

@@ -48,3 +48,37 @@ def profile(request, id):
         'setting' : setting
     }
     return render(request, 'users/creator-profile.html', context)
+
+def user_setting(request, id):
+    user = User.objects.get(id = id)
+    setting = Setting.objects.latest('id')
+    if request.method == "POST":
+        if 'update' in request.POST:
+            username = request.POST.get('username')
+            first_name = request.POST.get('first_name')
+            last_name = request.POST.get('last_name')
+            email = request.POST.get('email')
+            phone = request.POST.get('phone')
+            user = User.objects.get(id = id)
+            user.username = username 
+            user.first_name = first_name
+            user.last_name = last_name
+            user.email = email 
+            user.phone = phone 
+            user.save()
+            return redirect('profile', user.id)
+        if 'update_profile_image' in request.POST:
+            profile_image = request.FILES.get('profile_image')
+            user = User.objects.get(id = id)
+            user.profile_image = profile_image
+            user.save()
+            return redirect('profile', user.id)
+        if 'delete' in request.POST:
+            user = User.objects.get(id = id)
+            user.delete()
+            return redirect('index')
+    context = {
+        'user' : user,
+        'setting' : setting,
+    }
+    return render(request, 'users/creator-profile-edit.html', context)

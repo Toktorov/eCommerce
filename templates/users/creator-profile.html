@@ -46,7 +46,7 @@
                                 <h6 class="mt-3 mb-0">На сайте с {{ user.date_joined }}</h6>
 
                                 <div class="mt-4">
-                                    <a href="creator-profile-edit.html" class="btn btn-pills btn-outline-primary mx-1">Edit Profile</a>
+                                    <a href="{% url 'user_setting' user.id %}" class="btn btn-pills btn-outline-primary mx-1">Настройки аккаунта</a>
                                     <a href="upload-work.html" class="btn btn-pills btn-icon btn-outline-primary mx-1"><i class="uil uil-folder-upload"></i></a>
                                 </div>
                             </div>
