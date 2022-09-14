@@ -13,10 +13,9 @@
         <!-- Loader -->
 
         <!-- Navbar STart -->
-        {% include 'include/black_header.html' %}
+        {% include 'include/header.html' %}
         <!-- Navbar End -->
 
-        {% if request.user == user %}
         <!-- Start Home -->
         <section class="bg-half-170 d-table w-100" style="background: url('images/bg/01.jpg') bottom;">
             <div class="bg-overlay bg-gradient-overlay-2"></div>
@@ -24,8 +23,8 @@
                 <div class="row mt-5 justify-content-center">
                     <div class="col-12">
                         <div class="title-heading text-center">
-                            <h5 class="heading fw-semibold sub-heading text-white title-dark">Обновить профиль</h5>
-                            <p class="text-white-50 para-desc mx-auto mb-0">Обновите свой профиль</p>
+                            <h5 class="heading fw-semibold sub-heading text-white title-dark">Обновите свое объявление</h5>
+                            <p class="text-white-50 para-desc mx-auto mb-0">Обновить БЕСПЛАТНОЕ объявление просто!</p>
                         </div>
                     </div><!--end col-->
                 </div><!--end row-->
@@ -33,8 +32,8 @@
                 <div class="position-middle-bottom">
                     <nav aria-label="breadcrumb" class="d-block">
                         <ul class="breadcrumb breadcrumb-muted mb-0 p-0">
-                            <li class="breadcrumb-item"><a href="{% url 'index' %}">{{ setting.title }}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Обновить профиль</li>
+                            <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Обновить</li>
                         </ul>
                     </nav>
                 </div>
@@ -48,200 +47,112 @@
             </div>
         </div>
         <!-- End Home -->
+
         <!-- Start -->
-        
         <section class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9">
-                        <h5>Вы можете установить предпочтительное отображаемое имя, добавить свою фотографию и управлять другими личными настройками.</h5>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 col-md-7 col-12 order-2 order-md-1 mt-4 pt-2">
-                        <div class="rounded-md shadow">
-                            <div class="p-4 border-bottom">
-                                <h5 class="mb-0">Обновить профиль :</h5>
-                            </div>
+                    <div class="col-lg-3 col-md-4 order-2 order-md-1 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                        <div class="card creators creator-primary rounded-md shadow overflow-hidden sticky-bar">
+                            <div class="py-5" style="background: url('images/work/1.jpg');"></div>
+                            <div class="position-relative mt-n5">
+                                <img src="{{ request.user.profile_image.url }}" class="avatar avatar-md-md rounded-pill shadow-sm bg-light img-thumbnail mx-auto d-block" alt="">
+                                
+                                <div class="content text-center pt-2 p-4">
+                                    <h6 class="mb-0">{{ request.user.first_name }} {{ request.user.last_name }}</h6>
+                                    <small class="text-muted">@{{ request.user.username }}</small>
 
-                            <div class="p-4">
-                                <form class="profile-edit" method="POST">
-                                    {% csrf_token %}
-                                    <div class="row">
-                                        <div class="col-12 mb-4">
-                                            <label class="form-label h6">Имя пользователя</label>
-                                            <input name="username" id="first" type="text" class="form-control" value="{{ user.username }}">
-                                        </div><!--end col-->
-    
-                                        <div class="col-12 mb-4">
-                                            <label class="form-label h6">Имя</label>
-                                            <div class="form-icon">
-                                                <input name="first_name" id="web-url" type="text" class="form-control" value="{{ user.first_name }}">
-                                            </div>
-                                        </div><!--end col-->
-
-                                        <div class="col-12 mb-4">
-                                            <label class="form-label h6">Фамилия</label>
-                                            <div class="form-icon">
-                                                <input name="last_name" id="web-url" type="text" class="form-control" value="{{ user.last_name }}">
-                                            </div>
-                                        </div><!--end col-->
-        
-                                        <div class="col-12 mb-4">
-                                            <label class="form-label h6">Почта</label>
-                                            <input name="email" id="email" type="email" class="form-control" value="{{ user.email }}">
-                                        </div><!--end col-->
-
-                                        <div class="col-12 mb-4">
-                                            <label class="form-label h6">Телефонный номер</label>
-                                            <input name="phone" id="email" type="tel" class="form-control" value="{{ user.phone }}">
-                                        </div><!--end col-->
-                                    </div><!--end row-->
-    
-                                    
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <button type="submit" id="submit" name="update" class="btn btn-primary rounded-md">Обвноить профиль {{ user.username }}</button>
-                                        </div><!--end col-->
-                                    </div><!--end row-->
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="rounded-md shadow mt-4">
-                            <div class="p-4 border-bottom">
-                                <h5 class="mb-0">Уведомления об учетной записи:</h5>
-                            </div>
-
-                            <div class="p-4">
-                                <div class="d-flex justify-content-between pb-4">
-                                    <h6 class="mb-0">When someone mentions me</h6>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="noti1">
-                                        <label class="form-check-label" for="noti1"></label>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">When someone follows me</h6>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" checked id="noti2">
-                                        <label class="form-check-label" for="noti2"></label>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">When shares my activity</h6>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="noti3">
-                                        <label class="form-check-label" for="noti3"></label>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">When someone messages me</h6>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="noti4">
-                                        <label class="form-check-label" for="noti4"></label>
-                                    </div>
+                                    <ul class="list-unstyled mb-0 mt-3" id="navmenu-nav">
+                                        <li class="px-0">
+                                            <a href="creator-profile.html" class="d-flex align-items-center text-dark">
+                                                <span class="fs-6 mb-0"><i class="uil uil-user"></i></span>
+                                                <small class="d-block fw-semibold mb-0 ms-2">Профиль</small>
+                                            </a>
+                                        </li>
+                                        
+                                        <li class="px-0 mt-2">
+                                            <a href="creator-profile-edit.html" class="d-flex align-items-center text-dark">
+                                                <span class="fs-6 mb-0"><i class="uil uil-setting"></i></span>
+                                                <small class="d-block fw-semibold mb-0 ms-2">Настройки</small>
+                                            </a>
+                                        </li>
+                                        
+                                        <li class="px-0 mt-2">
+                                            <a href="lock-screen.html" class="d-flex align-items-center text-dark">
+                                                <span class="fs-6 mb-0"><i class="uil uil-sign-in-alt"></i></span>
+                                                <small class="d-block fw-semibold mb-0 ms-2">Выйти</small>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="rounded-md shadow mt-4">
-                            <div class="p-4 border-bottom">
-                                <h5 class="mb-0">Маркетинговые уведомления:</h5>
-                            </div>
-
-                            <div class="p-4">
-                                <div class="d-flex justify-content-between pb-4">
-                                    <h6 class="mb-0">Есть распродажа или акция</h6>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="noti5">
-                                        <label class="form-check-label" for="noti5"></label>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">Новости компании</h6>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="noti6">
-                                        <label class="form-check-label" for="noti6"></label>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">Еженедельные задания</h6>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" checked id="noti7">
-                                        <label class="form-check-label" for="noti7"></label>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between py-4 border-top">
-                                    <h6 class="mb-0">Отписаться от новостей</h6>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" checked id="noti8">
-                                        <label class="form-check-label" for="noti8"></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="rounded-md shadow mt-4">
-                            <form method="POST">
-                                {% csrf_token %}
-
-                                <div class="p-4 border-bottom">
-                                    <h5 class="mb-0 text-danger">Удалить аккаунт :</h5>
-                                </div>
-    
-                                <div class="p-4">
-                                    <h6 class="mb-0">Вы хотите удалить аккаунт? Пожалуйста, нажмите внизу кнопку "Удалить"</h6>
-                                    <div class="mt-4">
-                                        <button class="btn btn-danger" type="submit" name = "delete">Удалить аккаунт</button>
-                                    </div><!--end col-->
-                                </div>
-                            </form>
                         </div>
                     </div><!--end col-->
 
-                    <div class="col-lg-4 col-md-5 col-12 order-1 order-md-2 mt-4 pt-2">
-                        <div class="card ms-lg-5">
-                            <div class="profile-pic">
-                                <form method="POST" enctype="multipart/form-data">
-                                    {% csrf_token %}
-                                    <div class="row">
-                                        <div class="d-grid">
-                                            <p class="fw-semibold mb-4">Загрузите фотография вашего товара</p>
-                                            <div class="preview-box d-block justify-content-center rounded-md shadow overflow-hidden bg-light text-muted p-2 text-center small">Главное фото будет отображаться в результатах поиска</div>
-                                            <input type="file" id="input-file" name = "profile_image" name="input-file" accept="image/*" onchange={handleChange()} hidden />
-                                            <div class="mt-4">
-                                                <p class="text-muted mb-0">Мы рекомендуем изображение размером не менее 400 x 400</p>
+                    <div class="col-lg-9 col-md-8 order-1 order-md-2">
+                        <div class="card rounded-md shadow p-4">
+                           
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="d-grid">
+                                        <p class="fw-semibold mb-4">Загрузите фотография вашего товара</p>
+                                        <div class="preview-box d-block justify-content-center rounded-md shadow overflow-hidden bg-light text-muted p-2 text-center small">Главное фото будет отображаться в результатах поиска</div>
+                                        <input type="file" id="input-file" name = "image" name="input-file" accept="image/*" onchange={handleChange()} hidden />
+                                        <label class="btn-upload btn btn-primary rounded-md mt-4" for="input-file">Загрузить фотографию</label>
+                                    </div>
+                                </div><!--end col-->
+    
+                                <div class="col-lg-7 mt-4 mt-lg-0">
+                                    <div class="ms-lg-4">
+                                        <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="row">
+                                                <div class="col-12 mb-4">
+                                                    <label class="form-label fw-bold">Заголовок продукта <span class="text-danger">*</span></label>
+                                                    <input name="title" id="name"type="text" class="form-control" value="{{ product.title }}" placeholder="{{ product.title }}">
+                                                </div><!--end col-->
+
+                                                <div class="col-12 mb-4">
+                                                    <label class="form-label fw-bold"> Описание: </label>
+                                                    <textarea id="comments" name="description" rows="4" class="form-control" value = "{{ product.description }}" placeholder="{{ product.description }}"></textarea>
+                                                </div><!--end col-->
+        
+                                                <div class="col-md-6 mb-4">
+                                                    <label class="form-label fw-bold">Категория :</label>
+                                                    <select name="category" class="form-control">
+                                                        {% for category in categories %}
+                                                        <option value = "{{ category.id }}">{{ category.title }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div><!--end col-->
+        
+                                                <div class="col-md-6 mb-4">
+                                                    <label class="form-label fw-bold"> Цена : </label>
+                                                    <input name = "price" type="text" value = "{{ product.price }}" class="form-control" id="time">
+                                                </div><!--end col-->
+
+                                                <div class="col-md-6 mb-4">
+                                                    <label class="form-label fw-bold">Валюта :</label>
+                                                    <select name = "currency" class="form-control">
+                                                        {% for cur in currency %}
+                                                        <option value = "{{ cur.id }}">{{ cur.name_currency }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div><!--end col-->
+        
+                                                <div class="col-lg-12">
+                                                    <button type="submit" class="btn btn-primary rounded-md">Создать объявление</button>
+                                                </div><!--end col-->
                                             </div>
-                                            <label class="btn-upload btn btn-primary rounded-md mt-4" for="input-file">Загрузить фотографию</label>
-                                            <div class="col-lg-12">
-                                                <input type="hidden" name = "update_profile_image">
-                                                <button type="submit" style="margin-top: 10px;" class="btn btn-primary rounded-md">Обновить фотографию</button>
-                                            </div>
+                                        </form>
                                         </div>
                                     </div><!--end col-->
-                                      
-                                </form>
-                            </div>
-
-                            
+                                </div><!--end row-->
                         </div>
                     </div><!--end col-->
                 </div><!--end row-->
             </div><!--end container-->
         </section><!--end section-->
-        {% else %}
-        <!-- <section class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <h5>У вас нету доступа к данной странице</h5>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        {% include 'error.html' %}
-        {% endif %}
         <!-- End -->
 
         <!-- Footer Start -->
@@ -443,6 +354,7 @@
             </div>
         </div>
         <!-- end Style switcher -->
+        
         <script>
             const handleChange = () => {
             const fileUploader = document.querySelector('#input-file');
@@ -465,5 +377,4 @@
                 }
             };
         </script>
-        
 {% endblock %}

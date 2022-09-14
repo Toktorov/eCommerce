@@ -56,31 +56,31 @@
                         <div class="card creators creator-primary rounded-md shadow overflow-hidden sticky-bar">
                             <div class="py-5" style="background: url('images/work/1.jpg');"></div>
                             <div class="position-relative mt-n5">
-                                <img src="images/client/01.jpg" class="avatar avatar-md-md rounded-pill shadow-sm bg-light img-thumbnail mx-auto d-block" alt="">
+                                <img src="{{ request.user.profile_image.url }}" class="avatar avatar-md-md rounded-pill shadow-sm bg-light img-thumbnail mx-auto d-block" alt="">
                                 
                                 <div class="content text-center pt-2 p-4">
-                                    <h6 class="mb-0">Steven Townsend</h6>
-                                    <small class="text-muted">@StreetBoy</small>
+                                    <h6 class="mb-0">{{ request.user.first_name }} {{ request.user.last_name }}</h6>
+                                    <small class="text-muted">@{{ request.user.username }}</small>
 
                                     <ul class="list-unstyled mb-0 mt-3" id="navmenu-nav">
                                         <li class="px-0">
                                             <a href="creator-profile.html" class="d-flex align-items-center text-dark">
                                                 <span class="fs-6 mb-0"><i class="uil uil-user"></i></span>
-                                                <small class="d-block fw-semibold mb-0 ms-2">Profile</small>
+                                                <small class="d-block fw-semibold mb-0 ms-2">Профиль</small>
                                             </a>
                                         </li>
                                         
                                         <li class="px-0 mt-2">
                                             <a href="creator-profile-edit.html" class="d-flex align-items-center text-dark">
                                                 <span class="fs-6 mb-0"><i class="uil uil-setting"></i></span>
-                                                <small class="d-block fw-semibold mb-0 ms-2">Settings</small>
+                                                <small class="d-block fw-semibold mb-0 ms-2">Настройки</small>
                                             </a>
                                         </li>
                                         
                                         <li class="px-0 mt-2">
                                             <a href="lock-screen.html" class="d-flex align-items-center text-dark">
                                                 <span class="fs-6 mb-0"><i class="uil uil-sign-in-alt"></i></span>
-                                                <small class="d-block fw-semibold mb-0 ms-2">Logout</small>
+                                                <small class="d-block fw-semibold mb-0 ms-2">Выйти</small>
                                             </a>
                                         </li>
                                     </ul>

@@ -40,8 +40,8 @@ def user_login(request):
     }
     return render(request, 'users/login.html', context)
 
-def profile(request, id):
-    user = User.objects.get(id = id)
+def profile(request, username):
+    user = User.objects.get(username = username)
     setting = Setting.objects.latest('id')
     context = {
         'user' : user,

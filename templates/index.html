@@ -38,7 +38,7 @@
                             {% for random in random_product %}
                             <div class="d-flex justify-content-between">
                                 <div class="img-group">
-                                    <a href="{% url 'profile' random.user.id %}" class="user-avatar">
+                                    <a href="{% url 'profile' random.user.username %}" class="user-avatar">
                                         <img src="{{ random.user.profile_image.url }}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
                                     </a>
                                     
@@ -107,11 +107,11 @@
                                         <img src="{{ user.profile_image.url }}" class="avatar avatar-md-md rounded-pill shadow-sm bg-light img-thumbnail mx-auto d-block" alt="">
                                         
                                         <div class="content text-center pt-2 p-4">
-                                            <a href="{% url 'profile' user.id %}" class="text-dark h6 name d-block mb-0">{{ user.first_name }} {{ user.last_name }}</a>
+                                            <a href="{% url 'profile' user.username %}" class="text-dark h6 name d-block mb-0">{{ user.first_name }} {{ user.last_name }}</a>
                                             <small class="text-muted">@{{ user.username }}</small>
 
                                             <div class="mt-3">
-                                                <a href="{% url 'profile' user.id %}" class="btn btn-pills btn-soft-primary">Посмотреть</a>
+                                                <a href="{% url 'profile' user.username %}" class="btn btn-pills btn-soft-primary">Посмотреть</a>
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@
                         <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
                             <div class="d-flex justify-content-between">
                                 <div class="img-group">
-                                    <a href="creator-profile.html" class="user-avatar">
+                                    <a href="{% url 'profile' user.username %}" class="user-avatar">
                                         <img src="{{ product.user.profile_image.url }}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
                                     </a>
                                     

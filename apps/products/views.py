@@ -1,3 +1,4 @@
+from locale import currency
 from django.shortcuts import render, redirect
 from apps.products.models import Product, Currency
 from apps.settings.models import Setting
@@ -32,4 +33,16 @@ def create_product(request):
         'currency' : currency,
     }
     return render(request, 'products/upload_product.html', context)
-    
+
+def update_product(request, id):
+    setting = Setting.objects.latest('id')
+    product = Product.objects.get(id = id)
+    categories = Category.objects.all()
+    currency = Currency.objects.all()
+    context = {
+        'setting' : setting,
+        'product' : product,
+        'categories' : categories,
+        'currency' : currency
+    }
+    return render(request, 'products/update.html', context)
