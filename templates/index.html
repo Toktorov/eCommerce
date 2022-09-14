@@ -161,7 +161,7 @@
                         <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1 p-3">
                             <div class="d-flex justify-content-between">
                                 <div class="img-group">
-                                    <a href="{% url 'profile' user.username %}" class="user-avatar">
+                                    <a href="{% url 'profile' product.user.username %}" class="user-avatar">
                                         <img src="{{ product.user.profile_image.url }}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
                                     </a>
                                     
