@@ -64,7 +64,11 @@
                                 <a href="{% url 'product_detail' random.id %}" class="title text-dark h5">{{ random.title }}</a>
 
                                 <div class="d-flex justify-content-between mt-2">
+                                    {% if product.currency.name_currency != "Договорная" %}
                                     <small class="rate fw-bold">{{ random.price }} {{ random.currency }}</small>
+                                    {% else %}
+                                    <small class="rate fw-bold">{{ random.currency }}</small>
+                                    {% endif %}
                                     <small class="text-dark fw-bold">{{ random.created }}</small>
                                 </div>
                             </div>
@@ -188,7 +192,11 @@
                                 <a href="{% url 'product_detail' product.id %}" class="title text-dark h6">{{ product.title }}</a>
 
                                 <div class="d-flex justify-content-between mt-2">
+                                    {% if product.currency.name_currency != "Договорная" %}
                                     <small class="rate fw-bold">{{ product.price }} {{ product.currency }}</small>
+                                    {% else %}
+                                    <small class="rate fw-bold">{{ product.currency }}</small>
+                                    {% endif %}
                                     <small class="text-dark fw-bold">{{ product.created|truncatewords:1 }}</small>
                                 </div>
                             </div>

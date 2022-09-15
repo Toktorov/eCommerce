@@ -1,4 +1,3 @@
-from locale import currency
 from django.shortcuts import render, redirect
 from apps.products.models import Product, Currency
 from apps.settings.models import Setting
@@ -8,9 +7,11 @@ from apps.categories.models import Category
 def product_detail(request, id):
     setting = Setting.objects.latest('id')
     product = Product.objects.get(id = id)
+    random_product = Product.objects.all().order_by("?")[:4]
     context = {
         'setting' : setting,
         'product' : product,
+        'random_product' : random_product
     }
     return render(request, 'products/item-detail-one.html', context)
 
@@ -38,11 +39,36 @@ def update_product(request, id):
     setting = Setting.objects.latest('id')
     product = Product.objects.get(id = id)
     categories = Category.objects.all()
-    currency = Currency.objects.all()
+    currencies = Currency.objects.all()
+    if request.method == "POST":
+        if 'update' in request.POST:
+            title = request.POST.get('title')
+            description = request.POST.get('description')
+            category = request.POST.get('category')
+            price = request.POST.get('price')
+            currency = request.POST.get('currency')
+            product = Product.objects.get(id = id)
+            product.title = title 
+            product.description = description
+            product.category_id = category
+            product.price = price 
+            product.currency_id = currency
+            product.save()
+            return redirect('product_detail', product.id)
+        if 'delete' in request.POST:
+            product = Product.objects.get(id = id)
+            product.delete()
+            return redirect('index')
+        if 'product_image' in request.POST:
+            image = request.FILES.get('image')
+            product = Product.objects.get(id = id)
+            product.product_image = image 
+            product.save()
+            return redirect('product_detail', product.id)
     context = {
         'setting' : setting,
         'product' : product,
         'categories' : categories,
-        'currency' : currency
+        'currencies' : currencies
     }
     return render(request, 'products/update.html', context)

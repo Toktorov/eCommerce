@@ -175,7 +175,7 @@
                 <li><a href="contact.html" class="sub-menu-item">Contact</a></li>
                 {% if user.is_authenticated %}
                 <li><div style="margin-top: 12px !important;" class="mt-1 pt-2">
-                    <a href="{% url 'create_product' %}" class="btn btn-pills btn-outline-light-white">Создать объявление</a>
+                    <a href="{% url 'create_product' %}" id="btn-dark" class="btn btn-pills btn-outline-light-white">Создать объявление</a>
                 </div></li>
                 {% else %}
                 <li><a href="{% url 'register' %}" class="sub-menu-item">Зарегистрироваться</a></li>

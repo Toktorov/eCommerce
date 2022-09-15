@@ -146,14 +146,18 @@ if(document.getElementById("navigation")){
 
 function windowScroll() {
     const navbar = document.getElementById("topnav");
+    const btn_a = document.getElementById("btn-dark")
     if(navbar!=null){
         if (
             document.body.scrollTop >= 50 ||
             document.documentElement.scrollTop >= 50
         ) {
             navbar.classList.add("nav-sticky");
+            btn_a.classList.add("btn-dark")
         } else {
             navbar.classList.remove("nav-sticky");
+            btn_a.classList.remove("btn-dark")
+
         }
     }
 }
