@@ -32,13 +32,14 @@
             <li class="list-inline-item mb-0 me-1">
                 <div class="dropdown">
                     <button type="button" class="btn dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="uil uil-search text-dark fs-5 align-middle"></i>
+                        <i class="uil uil-search text-white title-dark btn-icon-light fs-5 align-middle"></i>
+                        <i class="uil uil-search text-dark btn-icon-dark fs-5 align-middle"></i>
                     </button>
                     <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 p-0" style="width: 300px;">
                         <div class="search-bar">
                             <div id="itemSearch" class="menu-search mb-0">
                                 <form role="search" method="get" id="searchItemform" class="searchform">
-                                    <input type="text" class="form-control border rounded" name="s" id="searchItem" placeholder="Search...">
+                                    <input type="text" class="form-control border rounded shadow" name="s" id="s" placeholder="Search...">
                                     <input type="submit" id="searchItemsubmit" value="Search">
                                 </form>
                             </div>
@@ -48,19 +49,24 @@
             </li>
 
             <li class="list-inline-item mb-0 me-1">
-                <a id="connectWallet" class="btn btn-icon btn-pills btn-primary"><i class="uil uil-wallet fs-6"></i></a>
+                <a id="connectWallet">
+                    <span class="btn-icon-dark"><span class="btn btn-icon btn-pills btn-primary"><i class="uil uil-wallet fs-6"></i></span></span>
+                    <span class="btn-icon-light"><span class="btn btn-icon btn-pills btn-light"><i class="uil uil-wallet fs-6"></i></span></span>
+                </a>
             </li>
             
             <li class="list-inline-item mb-0">
                 <div class="dropdown dropdown-primary">
-                    <button type="button" class="btn btn-pills dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/client/01.jpg" class="rounded-pill avatar avatar-sm-sm" alt=""></button>
+                    {% if user.is_authenticated and request.user == user %}
+                    <button type="button" class="btn btn-pills dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ request.user.profile_image.url }}" class="rounded-pill avatar avatar-sm-sm" alt=""></button>
+                    
                     <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 pb-3 pt-0 overflow-hidden rounded" style="min-width: 200px;">
                         <div class="position-relative">
                             <div class="pt-5 pb-3 bg-gradient-primary"></div>
                             <div class="px-3">
                                 <div class="d-flex align-items-end mt-n4">
-                                    <img src="images/client/01.jpg" class="rounded-pill avatar avatar-md-sm img-thumbnail shadow-md" alt="">
-                                    <h6 class="text-dark fw-bold mb-0 ms-1">Calvin Carlo</h6>
+                                    <img src="{{ request.user.profile_image.url }}" class="rounded-pill avatar avatar-md-sm img-thumbnail shadow-md" alt="">
+                                    <h6 class="text-dark fw-bold mb-0 ms-1">{{ request.user.username }}</h6>
                                 </div>
                                 <div class="mt-2">
                                     <small class="text-start text-dark d-block fw-bold">Wallet:</small>
@@ -75,13 +81,18 @@
                                 </div>
                             </div>
                         </div>
+                        {% if user.is_authenticated and request.user == user %}
+                        
                         <div class="mt-2">
-                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-user align-middle h6 mb-0 me-1"></i></span> Profile</a>
-                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="creator-profile-edit.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Settings</a>
+                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="{% url 'profile' request.user.username %}"><span class="mb-0 d-inline-block me-1"><i class="uil uil-user align-middle h6 mb-0 me-1"></i></span> Профиль</a>
+                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="{% url 'user_setting' request.user.id %}"><span class="mb-0 d-inline-block me-1"><i class="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Настройки</a>
                             <div class="dropdown-divider border-top"></div>
-                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="lock-screen.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6 mb-0 me-1"></i></span> Logout</a>
+                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="{% url 'logout' %}"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6 mb-0 me-1"></i></span> Выйти</a>
                         </div>
+                        {% endif %}
+                        
                     </div>
+                    {% endif %}
                 </div>
             </li>
         </ul>
@@ -91,61 +102,10 @@
             <!-- Navigation Menu-->   
             <ul class="navigation-menu nav-left">
                 <li class="has-submenu parent-parent-menu-item">
-                    <a href="javascript:void(0)">Home</a><span class="menu-arrow"></span>
-                    <ul class="submenu megamenu">
-                        <li>
-                            <ul>
-                                <li class="megamenu-head">LTR Home Pages</li>
-                                <li><a href="index.html" class="sub-menu-item">Home One</a></li>
-                                <li><a href="index-two.html" class="sub-menu-item">Home Two</a></li>
-                                <li><a href="index-three.html" class="sub-menu-item">Home Three</a></li>
-                                <li><a href="index-four.html" class="sub-menu-item">Home Four</a></li>
-                                <li><a href="index-five.html" class="sub-menu-item">Home Five <span class="badge bg-warning">NEW</span></a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <ul>
-                                <li class="megamenu-head">LTR Dark Home Pages</li>
-                                <li><a href="index-dark.html" class="sub-menu-item">Home One Dark</a></li>
-                                <li><a href="index-two-dark.html" class="sub-menu-item">Home Two Dark</a></li>
-                                <li><a href="index-three-dark.html" class="sub-menu-item">Home Three Dark</a></li>
-                                <li><a href="index-four-dark.html" class="sub-menu-item">Home Four Dark</a></li>
-                                <li><a href="index-five-dark.html" class="sub-menu-item">Home Five Dark <span class="badge bg-warning">NEW</span></a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <ul>
-                                <li class="megamenu-head">RTL Home Pages</li>
-                                <li><a href="index-rtl.html" class="sub-menu-item">Home One RTL <span class="badge bg-warning">NEW</span></a></li>
-                                <li><a href="index-two-rtl.html" class="sub-menu-item">Home Two RTL <span class="badge bg-warning">NEW</span></a></li>
-                                <li><a href="index-three-rtl.html" class="sub-menu-item">Home Three RTL <span class="badge bg-warning">NEW</span></a></li>
-                                <li><a href="index-four-rtl.html" class="sub-menu-item">Home Four RTL <span class="badge bg-warning">NEW</span></a></li>
-                                <li><a href="index-five-rtl.html" class="sub-menu-item">Home Five RTL <span class="badge bg-warning">NEW</span></a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <ul>
-                                <li class="megamenu-head">RTL Dark Home Pages</li>
-                                <li><a href="index-dark-rtl.html" class="sub-menu-item">Home One Dark RTL <span class="badge bg-warning">NEW</span></a></li>
-                                <li><a href="index-two-dark-rtl.html" class="sub-menu-item">Home Two Dark RTL <span class="badge bg-warning">NEW</span></a></li>
-                                <li><a href="index-three-dark-rtl.html" class="sub-menu-item">Home Three Dark RTL <span class="badge bg-warning">NEW</span></a></li>
-                                <li><a href="index-four-dark-rtl.html" class="sub-menu-item">Home Four Dark RTL <span class="badge bg-warning">NEW</span></a></li>
-                                <li><a href="index-five-dark-rtl.html" class="sub-menu-item">Home Five Dark RTL <span class="badge bg-warning">NEW</span></a></li>
-                            </ul>
-                        </li>
-                        
-                        <li class="d-none d-lg-block">
-                            <ul>
-                                <li><img src="images/character.png" class="img-fluid" alt=""></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <a href="{% url 'index' %}">Домой</a> 
                 </li>
                 
-                <li class="has-submenu parent-parent-menu-item active">
+                <li class="has-submenu parent-parent-menu-item">
                     <a href="javascript:void(0)">Explore</a><span class="menu-arrow"></span>
                     <ul class="submenu">
                         <li><a href="explore-one.html" class="sub-menu-item"> Explore One</a></li>
@@ -153,7 +113,7 @@
                         <li><a href="explore-three.html" class="sub-menu-item"> Explore Three</a></li>
                         <li><a href="explore-four.html" class="sub-menu-item"> Explore Four</a></li>
                         <li><a href="auction.html" class="sub-menu-item">Live Auction</a></li>
-                        <li class="active"><a href="item-detail-one.html" class="sub-menu-item active"> Item Detail One</a></li>
+                        <li><a href="item-detail-one.html" class="sub-menu-item"> Item Detail One</a></li>
                         <li><a href="item-detail-two.html" class="sub-menu-item"> Item Detail Two</a></li>
                     </ul>
                 </li>
@@ -211,8 +171,15 @@
                         <li><a href="changelog.html" class="sub-menu-item">Changelog</a></li>
                     </ul>
                 </li>
-                
                 <li><a href="contact.html" class="sub-menu-item">Contact</a></li>
+                {% if user.is_authenticated %}
+                <li><div style="margin-top: 12px !important;" class="mt-1 pt-2">
+                    <a href="{% url 'create_product' %}" class="btn btn-pills btn-outline-light-dark" style="color: black; border: 1px solid #000 !important;">Создать объявление</a>
+                </div></li>
+                {% else %}
+                <li><a href="{% url 'register' %}" class="sub-menu-item">Зарегистрироваться</a></li>
+                <li><a href="{% url 'user_login' %}" class="sub-menu-item">Войти</a></li>
+                {% endif %}
             </ul><!--end navigation menu-->
         </div><!--end navigation-->
     </div><!--end container-->
