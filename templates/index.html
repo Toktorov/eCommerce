@@ -26,10 +26,15 @@
                             <h6 class="text-light title-dark fw-normal">{{ setting.title }}</h6>
                             <h4 class="heading text-white title-dark fw-bold mb-3">Обходитесь без лишних трат в <br> <span class="typewrite" data-period="2000" data-type='[ "Sulpak", "Sulpak", "Sulpak", "Sulpak", "Sulpak"]'></span></h4>
                             <p class="text-white-50 para-desc mb-0 mb-0">{{ setting.description }}</p>
-                        
+                            {% if user.is_authenticated %}
                             <div class="mt-4 pt-2">
-                                <a href="aboutus.html" class="btn btn-pills btn-outline-light-white">Discover Now</a>
+                                <a href="{% url 'create_product' %}" class="btn btn-pills btn-outline-light-white">Создать объявление</a>
                             </div>
+                            {% else %}
+                            <div class="mt-4 pt-2">
+                                <a href="{% url 'register' %}" class="btn btn-pills btn-outline-light-white">Создать объявление</a>
+                            </div>
+                            {% endif %}
                         </div>
                     </div><!--end slide-->
 
@@ -50,8 +55,9 @@
                             <div class="nft-image rounded-md mt-3 position-relative overflow-hidden shadow">
                                 <a href="{% url 'product_detail' random.id %}"><img src="{{ random.product_image.url }}" class="img-fluid" alt=""></a>
                                 <div class="position-absolute top-0 start-0 m-2">
+                                    <a href="{% url 'product_detail' random.id %}" class="badge badge-link bg-danger">PRO</a>
                                     <a href="{% url 'product_detail' random.id %}" class="badge badge-link bg-primary">{{ random.category.title }}</a>
-                                </div>
+                                </div> 
 
                                 <div class="position-absolute top-0 end-0 m-2">
                                     <a href="{% url 'product_detail' random.id %}" class="btn btn-pills btn-icon"><i class="uil uil-shopping-cart-alt"></i></a>
@@ -178,7 +184,12 @@
                             <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
                                 <a href="{% url 'product_detail' product.id %}"><img src="{{ product.product_image.url }}" class="img-fluid" alt=""></a>
                                 <div class="position-absolute top-0 start-0 m-2">
+                                    {% if product.status_product == True %}
+                                    <a href="{% url 'product_detail' product.id %}" class="badge badge-link bg-danger">PRO</a>
                                     <a href="{% url 'product_detail' product.id %}" class="badge badge-link bg-primary">{{ product.category.title }}</a>
+                                    {% else %}
+                                    <a href="{% url 'product_detail' product.id %}" class="badge badge-link bg-primary">{{ product.category.title }}</a>
+                                    {% endif %}
                                 </div>
 
                                 <div class="position-absolute top-0 end-0 m-2">

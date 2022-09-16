@@ -17,6 +17,7 @@
         <!-- Navbar End -->
 
         <!-- Start Home -->
+        {% if user.is_authenticated %}
         <section class="bg-half-170 d-table w-100" style="background: url('images/bg/01.jpg') bottom;">
             <div class="bg-overlay bg-gradient-overlay-2"></div>
             <div class="container">
@@ -153,6 +154,9 @@
                 </div><!--end row-->
             </div><!--end container-->
         </section><!--end section-->
+        {% else %}
+        {% include 'error.html' %}
+        {% endif %}
         <!-- End -->
 
         <!-- Footer Start -->

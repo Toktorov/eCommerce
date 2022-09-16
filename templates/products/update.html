@@ -157,8 +157,8 @@
                                 </div><!--end col-->
                                 <div class="rounded-md shadow mt-4">
                                     <form method="POST">
-                                        <input type="hidden" name="csrfmiddlewaretoken" value="JAL1AwikOgpHUJnnS3SwcEIkCWc7iGAFw14Bz62sLATfWZgsrAelpybxYUVoBWq0">
-        
+                                        {% csrf_token %}
+                                        
                                         <div class="p-4 border-bottom">
                                             <h5 class="mb-0 text-danger">Удалить объявление :</h5>
                                         </div>

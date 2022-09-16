@@ -7,8 +7,8 @@ from apps.categories.models import Category
 # Create your views here.
 def index(request):
     setting = Setting.objects.latest('id')
-    products = Product.objects.all().order_by("?")
-    random_product = Product.objects.all().order_by("?")[:1]
+    products = Product.objects.all().order_by("?")[:20]
+    random_product = Product.objects.all().order_by("?").filter(status_product = True)[:1]
     users = User.objects.all().order_by("?")
     categories = Category.objects.all().order_by("?")[:5]
     context = {

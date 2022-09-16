@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 from apps.users.models import User
 from apps.categories.models import Category
@@ -28,7 +29,7 @@ class Product(models.Model):
         verbose_name="Название продукта"
     )
     description = models.CharField(
-        max_length=300,
+        max_length=500,
         verbose_name="Описание товара"
     )
     product_image = models.ImageField(
@@ -49,6 +50,10 @@ class Product(models.Model):
         on_delete=models.CASCADE,
         related_name="product_category",
         verbose_name="Категория товара"
+    )
+    status_product = models.BooleanField(
+        verbose_name="Статус продукта",
+        default=False
     )
     created = models.DateTimeField(
         auto_now_add=True,

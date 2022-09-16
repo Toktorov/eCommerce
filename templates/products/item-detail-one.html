@@ -31,7 +31,13 @@
                             <div class="title-heading">
                                 <h4 class="h3 fw-bold mb-0">{{ product.title }} </h4>
                             </div>
-    
+                            {% if product.status_product == True %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="" class="btn btn-danger rounded-md" style="margin-top: 10px;">PRO</a>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                            {% endif %}
                             <div class="row">
                                 <div class="col-md-6 mt-4 pt-2">
                                     <h6>Цена товара</h6>
@@ -220,7 +226,12 @@
                             <div class="nft-image rounded-md mt-3 position-relative overflow-hidden">
                                 <a href="item-detail-one.html"><img src="{{ product.product_image.url }}" class="img-fluid" alt=""></a>
                                 <div class="position-absolute top-0 start-0 m-2">
+                                    {% if product.status_product == True %}
+                                    <a href="javascript:void(0)" class="badge badge-link bg-danger">PRO</a>
                                     <a href="javascript:void(0)" class="badge badge-link bg-primary">{{ product.category.title }}</a>
+                                    {% else %}
+                                    <a href="javascript:void(0)" class="badge badge-link bg-primary">{{ product.category.title }}</a>
+                                    {% endif %}
                                 </div>
                                 <div class="position-absolute top-0 end-0 m-2">
                                     <span class="like-icon shadow-sm"><a href="javascript:void(0)" class="text-muted icon"><i class="mdi mdi-18px mdi-heart mb-0"></i></a></span>
