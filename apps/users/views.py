@@ -72,7 +72,7 @@ def user_setting(request, id):
             user = User.objects.get(id = id)
             user.profile_image = profile_image
             user.save()
-            return redirect('profile', user.id)
+            return redirect('profile', user.username)
         if 'delete' in request.POST:
             user = User.objects.get(id = id)
             user.delete()
