@@ -46,7 +46,7 @@
                                     {% else %}
                                     <h4 class="mb-0">{{ product.currency }}</h4>
                                     {% endif %}
-                                    <small class="mb-0 text-muted">Категория {{ product.category.title }}</small>
+                                    <a href="{% url 'category_detail' product.category.slug %}"><small class="mb-0 text-muted">Категория {{ product.category.title }}</small></a>
                                 </div>
                             </div>
                             {% if user.is_authenticated and request.user == product.user %}
