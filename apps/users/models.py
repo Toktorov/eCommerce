@@ -14,6 +14,10 @@ class User(AbstractUser):
         verbose_name="Телефонный номер",
         blank = True, null = True
     )
+    balance = models.PositiveBigIntegerField(
+        verbose_name="Баланс пользователя", 
+        default = 0
+    )
 
     def __str__(self):
         return self.username

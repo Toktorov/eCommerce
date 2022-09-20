@@ -66,7 +66,7 @@ def user_setting(request, id):
             user.email = email 
             user.phone = phone 
             user.save()
-            return redirect('profile', user.id)
+            return redirect('profile', user.username)
         if 'update_profile_image' in request.POST:
             profile_image = request.FILES.get('profile_image')
             user = User.objects.get(id = id)

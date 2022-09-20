@@ -90,6 +90,7 @@
         <!-- Start -->
         <section class="section">
             <div class="container">
+                {% if users and user.first_name and user.last_name %}
                 <div class="row align-items-end mb-4 pb-2">
                     <div class="col-md-8">
                         <div class="section-title">
@@ -132,6 +133,7 @@
                         </div>
                     </div><!--end col-->
                 </div><!--end row-->
+                {% endif %}
 
                 <div class="row">
                     <div class="col">

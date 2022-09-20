@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from apps.products.models import Product, Currency
 from apps.settings.models import Setting
 from apps.categories.models import Category
+from apps.users.models import User
 
 # Create your views here.
 def product_detail(request, id):
@@ -72,3 +73,22 @@ def update_product(request, id):
         'currencies' : currencies
     }
     return render(request, 'products/update.html', context)
+
+def pro_product_update(request, id):
+    setting = Setting.objects.latest('id')
+    product = Product.objects.get(id = id)
+    if request.method == "POST":
+        try:
+            user = User.objects.get(id = request.user.id)
+            user.balance -= 100
+            product.status_product = True 
+            user.save()
+            product.save()
+            return redirect('product_detail', product.id)
+        except:
+            return redirect('not_enough_money')
+    context = {
+        'setting' : setting,
+        'product' : product,
+    }
+    return render(request, 'products/pro_product.html', context)

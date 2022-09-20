@@ -19,3 +19,6 @@ def index(request):
         'categories' : categories,
     }
     return render(request, 'index.html', context)
+
+def not_enough_money(request):
+    return render(request, 'not_enough_money.html')
