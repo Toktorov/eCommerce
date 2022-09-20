@@ -109,7 +109,7 @@
                     <a href="javascript:void(0)">Категории</a><span class="menu-arrow"></span>
                     <ul class="submenu">
                         {% for category in categories %}
-                        <li><a href="explore-one.html" class="sub-menu-item">{{ category.title }}</a></li>
+                        <li><a href="{% url 'category_detail' category.slug %}" class="sub-menu-item">{{ category.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>

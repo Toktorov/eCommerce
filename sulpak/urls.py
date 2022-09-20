@@ -27,6 +27,7 @@ urlpatterns = [
     path('users/', include('apps.users.urls')),
     path('logout/', LogoutView.as_view(next_page = 'index'), name = "logout"),
     path('product/', include('apps.products.urls')),
+    path('category/', include('apps.categories.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
