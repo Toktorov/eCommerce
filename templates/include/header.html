@@ -70,6 +70,7 @@
                                 </div>
                                 <div class="mt-2">
                                     <small class="text-start text-dark d-block fw-bold">Кошелек:</small>
+                                    <small class="text-start text-dark d-block fw-bold">{{ request.user.wallet }}</small>
                                     
                                 </div>
                                 
@@ -83,6 +84,7 @@
                         <div class="mt-2">
                             <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="{% url 'profile' request.user.username %}"><span class="mb-0 d-inline-block me-1"><i class="uil uil-user align-middle h6 mb-0 me-1"></i></span> Профиль</a>
                             <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="{% url 'user_setting' request.user.id %}"><span class="mb-0 d-inline-block me-1"><i class="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Настройки</a>
+                            <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="{% url 'money_transfer' %}"><span class="mb-0 d-inline-block me-1"><i class="uil uil-cog align-middle h6 mb-0 me-1"></i></span> Отправить деньги</a>
                             <div class="dropdown-divider border-top"></div>
                             <a class="dropdown-item small fw-semibold text-dark d-flex align-items-center" href="{% url 'logout' %}"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6 mb-0 me-1"></i></span> Выйти</a>
                         </div>

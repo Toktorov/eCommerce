@@ -90,7 +90,7 @@
         <!-- Start -->
         <section class="section">
             <div class="container">
-                {% if users and user.first_name and user.last_name %}
+                {% if users or user.first_name and user.last_name %}
                 <div class="row align-items-end mb-4 pb-2">
                     <div class="col-md-8">
                         <div class="section-title">
@@ -110,7 +110,7 @@
                     <div class="col-12 mt-3">
                         <div class="tiny-five-item-nav-arrow">
                             {% for user in users %}
-                            {% if user.first_name and user.last_name %}
+                            {% if user.status_user == True and user.first_name and user.last_name %}
                             <div class="tiny-slide">
                                 <div class="card creators creators-two creator-primary rounded-md shadow overflow-hidden mx-2 my-3">
                                     <div class="py-5" style="background: url('images/work/1.jpg');"></div>
@@ -122,7 +122,7 @@
                                             <small class="text-muted">@{{ user.username }}</small>
 
                                             <div class="mt-3">
-                                                <a href="{% url 'profile' user.username %}" class="btn btn-pills btn-soft-primary">Посмотреть</a>
+                                                <a href="{% url 'profile' user.username %}" class="btn btn-pills btn-soft-danger">PRO</a>
                                             </div>
                                         </div>
                                     </div>

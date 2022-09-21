@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from apps.settings.views import index, not_enough_money
+from apps.settings.views import index, not_enough_money, no_settings, destination_not_found
 from apps.products.views import product_detail
 from django.conf import settings
 from django.conf.urls.static import static
@@ -28,7 +28,9 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page = 'index'), name = "logout"),
     path('product/', include('apps.products.urls')),
     path('category/', include('apps.categories.urls')),
-    path('not_enough_money/', not_enough_money, name = "not_enough_money")
+    path('not_enough_money/', not_enough_money, name = "not_enough_money"),
+    path('no_setting/', no_settings, name = "no_settings"),
+    path('destination/not/found', destination_not_found, name = "destination_not_found"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

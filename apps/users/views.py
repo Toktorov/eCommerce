@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from apps.users.models import User
+from apps.users.models import User, MoneyTransfer
 from apps.settings.models import Setting
 from django.contrib.auth import login, authenticate
 
@@ -82,3 +82,49 @@ def user_setting(request, id):
         'setting' : setting,
     }
     return render(request, 'users/creator-profile-edit.html', context)
+
+def pro_update_user(request, id):
+    setting = Setting.objects.latest('id')
+    user = User.objects.get(id = id)
+    if request.method == "POST":
+        try:
+            user = User.objects.get(id = id)
+            user.balance -= 300
+            user.status_user = True 
+            user.save()
+            return redirect('profile', user.username)
+        except:
+            return redirect('not_enough_money')
+    context = {
+        'setting' : setting,
+        'user' : user,
+    }
+    return render(request, 'users/user_update_pro.html', context)
+
+def money_transfer(request):
+    setting = Setting.objects.latest('id')
+    if request.method == "POST":
+        address_wallet = request.POST.get('address_wallet')
+        amount = request.POST.get('amount')
+        sender = User.objects.get(username = request.user)
+        try:
+            try:
+                destination = User.objects.get(wallet = address_wallet)
+            except:
+                return redirect('destination_not_found')
+            sender.balance -= int(amount)
+            sender.save()
+        except:
+            return redirect('not_enough_money')
+        try:
+            destination.balance += int(amount)
+            destination.save()
+        except:
+            return redirect('destination_not_found')
+        transfer_money = MoneyTransfer.objects.create(user = request.user, address_wallet = address_wallet, amount_money = amount)
+        return redirect('index')
+
+    context = {
+        'setting' : setting,
+    }
+    return render(request, 'users/money_transfer.html', context)
