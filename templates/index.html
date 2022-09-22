@@ -667,14 +667,15 @@
                     </div>
 
                     <div class="modal-body p-4 text-center">
-                        <img src="images/wallet/MetaMask_Fox.svg" class="avatar avatar-md-md rounded-circle shadow-sm " alt="">
+                        <img src="{% static 'images/wallet/MetaMask_Fox.svg' %}" class="avatar avatar-md-md rounded-circle shadow-sm " alt="">
 
                         <div class="content mt-4">
-                            <h5 class="text-danger mb-4">Error!</h5>
+                            <h5 class="text-primary mb-4">Баланс {{ request.user.balance }} KGS</h5>
 
-                            <P class="text-muted">Please Download MetaMask and create your profile and wallet in MetaMask. Please click and check the details,</P>
+                            <P class="text-muted">Ваш адрес кошелька:</P>
+                            <P class="text-muted">{{ request.user.wallet }}</P>
 
-                            <a href="https://metamask.io/" class="btn btn-link primary text-primary fw-bold" target="_blank">MetaMask</a>
+                            <a href="https://metamask.io/" class="btn btn-link primary text-primary fw-bold" target="_blank">Перейти в аккаунт</a>
                         </div>
                     </div>
                 </div>

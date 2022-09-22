@@ -25,8 +25,8 @@
                 <div class="row mt-5 justify-content-center">
                     <div class="col-12">
                         <div class="title-heading text-center">
-                            <h5 class="heading fw-semibold sub-heading text-white title-dark">Сделать PRO объявление</h5>
-                            <p class="text-white-50 para-desc mx-auto mb-0">Сделайте PRO свое объявление</p>
+                            <h5 class="heading fw-semibold sub-heading text-white title-dark">Сделать свой аккаунт PRO</h5>
+                            <p class="text-white-50 para-desc mx-auto mb-0">Сделайте PRO свой аккаунт и получите возможность делать бесконечное количество PRO объявлений</p>
                         </div>
                     </div><!--end col-->
                 </div><!--end row-->
@@ -35,7 +35,7 @@
                     <nav aria-label="breadcrumb" class="d-block">
                         <ul class="breadcrumb breadcrumb-muted mb-0 p-0">
                             <li class="breadcrumb-item"><a href="{% url 'index' %}">{{ setting.title }}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">PRO объявление</li>
+                            <li class="breadcrumb-item active" aria-current="page">PRO аккаунт</li>
                         </ul>
                     </nav>
                 </div>
@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9">
-                        <h5>Вы можете сделать свой аккаунт PRO за 300KGS, из-за этого у вас будут высокие охваты</h5>
+                        <h5>Вы можете сделать свой аккаунт PRO за 1000KGS и вы получите возможность делать бесконечное количество PRO объявлений</h5>
                     </div>
                 </div>
                         <div class="rounded-md shadow mt-4">
@@ -63,13 +63,13 @@
                                 {% csrf_token %}
 
                                 <div class="p-4 border-bottom">
-                                    <h5 class="mb-0 text-danger">Сделать PRO (300 KGS) {{ user.username }}</h5>
+                                    <h5 class="mb-0 text-danger">Сделать PRO (1000 KGS). Аккаунт: {{ user.username }}</h5>
                                 </div>
     
                                 <div class="p-4">
                                     <h6 class="mb-0">Вы точно хотите сделать свой аккаунт PRO?</h6>
                                     <div class="mt-4">
-                                        <button class="btn btn-danger" type="submit">Сделать PRO (300 KGS)</button>
+                                        <button class="btn btn-danger" type="submit">Сделать PRO (1000 KGS)</button>
                                     </div><!--end col-->
                                 </div>
                             </form>

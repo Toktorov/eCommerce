@@ -53,23 +53,39 @@
         
         <section class="section">
             <div class="container">
+                {% if request.user.status_user == True %}
+                <div class="row">
+                    <div class="col-lg-9">
+                        <h5>Вы можете сделать свое объявление PRO за бесплатно, из-за того что у вас PRO аккаунт</h5>
+                    </div>
+                </div>
+                {% else %}
                 <div class="row">
                     <div class="col-lg-9">
                         <h5>Вы можете сделать свое объявление PRO за 100KGS, из-за этого у вас будут высокие охваты</h5>
                     </div>
                 </div>
+                {% endif %}
                         <div class="rounded-md shadow mt-4">
                             <form method="POST">
                                 {% csrf_token %}
-
+                                {% if request.user.status_user == True %}
+                                <div class="p-4 border-bottom">
+                                    <h5 class="mb-0 text-danger">Сделать PRO (бесплатно) {{ product.title }}</h5>
+                                </div>
+                                {% else %}
                                 <div class="p-4 border-bottom">
                                     <h5 class="mb-0 text-danger">Сделать PRO (100 KGS) {{ product.title }}</h5>
                                 </div>
-    
+                                {% endif %}
                                 <div class="p-4">
                                     <h6 class="mb-0">Вы точно хотите сделать свое объявление PRO?</h6>
                                     <div class="mt-4">
+                                        {% if request.user.status_user == True %}
+                                        <button class="btn btn-danger" type="submit">Сделать PRO (бесплатно)</button>
+                                        {% else %}
                                         <button class="btn btn-danger" type="submit">Сделать PRO (100 KGS)</button>
+                                        {% endif %}
                                     </div><!--end col-->
                                 </div>
                             </form>

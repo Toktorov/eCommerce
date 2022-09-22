@@ -80,10 +80,14 @@ def pro_product_update(request, id):
     if request.method == "POST":
         try:
             user = User.objects.get(id = request.user.id)
-            user.balance -= 100
+            if user.status_user == False:
+                user.balance -= 100
+            else:
+                user.balance -= 0
             product.status_product = True 
             user.save()
             product.save()
+            
             return redirect('product_detail', product.id)
         except:
             return redirect('not_enough_money')

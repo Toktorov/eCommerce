@@ -89,7 +89,7 @@ def pro_update_user(request, id):
     if request.method == "POST":
         try:
             user = User.objects.get(id = id)
-            user.balance -= 300
+            user.balance -= 1000
             user.status_user = True 
             user.save()
             return redirect('profile', user.username)
@@ -123,7 +123,6 @@ def money_transfer(request):
             return redirect('destination_not_found')
         transfer_money = MoneyTransfer.objects.create(user = request.user, address_wallet = address_wallet, amount_money = amount)
         return redirect('index')
-
     context = {
         'setting' : setting,
     }

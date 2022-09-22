@@ -74,7 +74,7 @@
                                             </div><!--end col-->
         
                                             <div class="col-12 text-center mt-4">
-                                                <small><span class="text-muted me-2">Don't have an account ?</span> <a href="signup.html" class="text-dark fw-bold">Sign Up</a></small>
+                                                <small><span class="text-muted me-2">У вас нет аккаунта?</span> <a href="{% url 'register' %}" class="text-dark fw-bold">Зарегистрироваться</a></small>
                                             </div><!--end col-->
                                         </div><!--end row-->
                                     </form>
@@ -84,7 +84,7 @@
 
                             <!-- Start Footer -->
                             <div class="text-center">
-                                <small class="mb-0 text-light title-dark">© <script>document.write(new Date().getFullYear())</script> Superex. Design with <i class="mdi mdi-heart text-danger"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</small>
+                                <small class="mb-0 text-light title-dark">© <script>document.write(new Date().getFullYear())</script> {{ setting.title }} <i class="mdi mdi-heart text-danger"></i> by <a href="https://itrun.kg/" target="_blank" class="text-reset">IT-RUN</a>.</small>
                             </div>
                             <!-- End Footer -->
                         </div>

@@ -55,10 +55,17 @@
                                     <a href="{% url 'update_product' product.id %}" class="btn btn-primary rounded-md" style="margin-top: 10px;">Обновить объявление</a>
                                 </div><!--end col-->
                             </div><!--end row-->
-                            {% if product.status_product == False %}
+                            {% if product.status_product == False and product.user.status_user == False %}
                             <div class="row">
                                 <div class="col-12">
                                     <a href="{% url 'pro_product_update' product.id %}" class="btn btn-danger rounded-md" style="margin-top: 10px;">Сделать PRO (100 KGS)</a>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                            {% endif %}
+                            {% if product.status_product == False and product.user.status_user == True %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="{% url 'pro_product_update' product.id %}" class="btn btn-danger rounded-md" style="margin-top: 10px;">Сделать PRO (бесплатно)</a>
                                 </div><!--end col-->
                             </div><!--end row-->
                             {% endif %}
