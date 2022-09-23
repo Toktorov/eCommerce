@@ -48,3 +48,54 @@ class Setting(models.Model):
     class Meta:
         verbose_name = "Настройка"
         verbose_name_plural = "Настройки"
+
+class Contact(models.Model):
+    name = models.CharField(
+        max_length=100,
+        verbose_name="Имя")
+    email = models.EmailField(
+        verbose_name="Почта"
+    )
+    title = models.CharField(
+        max_length=100,
+        verbose_name="Заголовок"
+    )
+    message = models.CharField(
+        max_length=255, 
+        verbose_name="Сообщение"
+    )
+    status_contact = models.BooleanField(
+        verbose_name="Статус обращения",
+        default=False
+    )
+    created = models.DateTimeField(
+        auto_now_add=True,
+    )
+
+    def __str__(self):
+        return f"{self.name} {self.email}"
+
+    class Meta:
+        verbose_name = "Контакт"
+        verbose_name_plural = "Контакты"
+    
+class AboutUs(models.Model):
+    image = models.ImageField(
+        upload_to = 'about_us/',
+        verbose_name="Фотография"
+    )
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Заголовок"
+    )
+    description = models.CharField(
+        max_length=500,
+        verbose_name="Описание"
+    )
+
+    def __str__(self):
+        return self.title 
+
+    class Meta:
+        verbose_name = "О нас"
+        verbose_name_plural = "О нас"

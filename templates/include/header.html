@@ -119,11 +119,9 @@
                 
                 <li><a href="activity.html" class="sub-menu-item"> Новости</a></li>
 
-                <li><a href="wallet.html" class="sub-menu-item">О нас</a></li>
-
-               
-                
-                <li><a href="contact.html" class="sub-menu-item">Контакты</a></li>
+                <li><a href="{% url 'about_us' %}" class="sub-menu-item">О нас</a></li>
+                               
+                <li><a href="{% url 'contact' %}" class="sub-menu-item">Контакты</a></li>
                 {% if request.user.is_authenticated %}
                 <li><div style="margin-top: 12px !important;" class="mt-1 pt-2">
                     <a href="{% url 'create_product' %}" id="btn-dark" class="btn btn-pills btn-outline-light-white">Создать объявление</a>

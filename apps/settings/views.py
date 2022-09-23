@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
-from apps.settings.models import Setting
+from django.core.mail import send_mail
+from apps.settings.models import AboutUs, Setting, Contact
 from apps.products.models import Product
 from apps.users.models import User
 from apps.categories.models import Category
+import time
 
 # Create your views here.
 def index(request):
@@ -24,10 +26,52 @@ def index(request):
     return render(request, 'index.html', context)
 
 def not_enough_money(request):
-    return render(request, 'not_enough_money.html')
+    return render(request, 'settings/not_enough_money.html')
 
 def no_settings(request):
-    return render(request, 'no_settings.html')
+    return render(request, 'settings/no_settings.html')
 
 def destination_not_found(request):
     return render(request, 'users/destination_not_found.html')
+
+def thank_you(request):
+   return render(request, 'settings/thank_you.html')
+
+def about_us(request):
+    setting = Setting.objects.latest('id')
+    about = AboutUs.objects.latest('id')
+    users = User.objects.all()
+    product = Product.objects.all()
+    category = Category.objects.all()
+    context = {
+        'setting' : setting,
+        'about' : about,
+        'users' : users,
+        'product' : product,
+        'category' : category,
+    }
+    return render(request, 'settings/aboutus.html', context)
+
+def contact(request):
+    setting = Setting.objects.latest('id')
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        title = request.POST.get('title')
+        message = request.POST.get('message')
+        contact = Contact.objects.create(name = name, email = email, title = title, message = message)
+        send_mail(
+                    # title:
+                    f"{setting.title}",
+                    # message:
+                    f"{name} спасибо за ваше сообщение. В скором времени мы вам ответим. Ваше сообщение {message}",
+                    # from:
+                    "noreply@somehost.local",
+                    # to:
+                    [email]
+            )
+        return redirect('thank_you')
+    context = {
+        'setting' : setting,
+    }
+    return render(request, 'settings/contact.html', context)
