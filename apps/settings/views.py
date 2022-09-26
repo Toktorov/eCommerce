@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
-from apps.settings.models import AboutUs, Setting, Contact
+from apps.settings.models import AboutUs, Setting, Contact, News
 from apps.products.models import Product
 from apps.users.models import User
 from apps.categories.models import Category
-import time
+
 
 # Create your views here.
 def index(request):
@@ -16,12 +16,14 @@ def index(request):
     random_product = Product.objects.all().order_by("?").filter(status_product = True)[:1]
     users = User.objects.all().order_by("?")
     categories = Category.objects.all().order_by("?")[:5]
+    news = News.objects.all()
     context = {
         'setting' : setting,
         'products' : products,
         'users' : users,
         'random_product' : random_product,
         'categories' : categories,
+        'news' : news,
     }
     return render(request, 'index.html', context)
 
@@ -75,3 +77,21 @@ def contact(request):
         'setting' : setting,
     }
     return render(request, 'settings/contact.html', context)
+
+def news_detail(request, id):
+    setting = Setting.objects.latest('id')
+    news = News.objects.get(id = id)
+    context = {
+        'setting' : setting,
+        'news' : news,
+    }
+    return render(request, 'settings/news_detail.html', context)
+
+def news_index(request):
+    setting = Setting.objects.latest('id')
+    news = News.objects.all()
+    context = {
+        'setting' : setting,
+        'news' : news
+    }
+    return render(request, 'settings/news_index.html', context)

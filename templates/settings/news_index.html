@@ -17,14 +17,14 @@
         <!-- Navbar End -->
 
         <!-- Start Home -->
-        <section class="bg-half-170 d-table w-100" style="background: url('images/bg/01.jpg') bottom;">
+        <section class="bg-half-170 d-table w-100" style="background: url('images/bg/02.jpg') bottom;">
             <div class="bg-overlay bg-gradient-overlay-2"></div>
             <div class="container">
                 <div class="row mt-5 justify-content-center">
                     <div class="col-12">
                         <div class="title-heading text-center">
-                            <h5 class="heading fw-semibold sub-heading text-white title-dark">Связаться с нами</h5>
-                            <p class="text-white-50 para-desc mx-auto mb-0">Если у вас есть предложения или же проблемы. Свяжитесь с нами!</p>
+                            <h5 class="heading fw-semibold sub-heading text-white title-dark">Новости</h5>
+                            <p class="text-white-50 para-desc mx-auto mb-0">Новости нашего проекта {{ setting.title }}</p>
                         </div>
                     </div><!--end col-->
                 </div><!--end row-->
@@ -33,7 +33,7 @@
                     <nav aria-label="breadcrumb" class="d-block">
                         <ul class="breadcrumb breadcrumb-muted mb-0 p-0">
                             <li class="breadcrumb-item"><a href="{% url 'index' %}">{{ setting.title }}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">О нас</li>
+                            <li class="breadcrumb-item active" aria-current="page">Новости</li>
                         </ul>
                     </nav>
                 </div>
@@ -48,128 +48,36 @@
         </div>
         <!-- End Home -->
 
-        <!-- Start Section -->
+        <!-- Start Blog -->
         <section class="section">
             <div class="container">
-                <div class="row">
+                <div class="row g-4">
+                    {% for new in news %}
                     <div class="col-lg-4 col-md-6">
-                        <div class="card border-0 text-center features feature-primary feature-clean">
-                            <div class="icons text-center mx-auto">
-                                <i class="uil uil-phone d-block rounded-md h3 mb-0"></i>
+                        <div class="card blog blog-primary shadow rounded-md overflow-hidden">
+                            <div class="position-relative">
+                                <img src="{{ new.image.url }}" class="img-fluid rounded-md" alt="">
                             </div>
-                            <div class="content mt-4 px-4">
-                                <h5 class="fw-bold">Телефонный номер</h5>
-                                <p class="text-muted">Начните работать с {{ setting.title }}, который может предоставить все</p>
-                                <a href="tel:+152534-468-854" class="text-primary">{{ setting.phone }}</a>
-                            </div>
-                        </div>
-                    </div><!--end col-->
-                    
-                    <div class="col-lg-4 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                        <div class="card border-0 text-center features feature-primary feature-clean">
-                            <div class="icons text-center mx-auto">
-                                <i class="uil uil-envelope d-block rounded-md h3 mb-0"></i>
-                            </div>
-                            <div class="content mt-4 px-4">
-                                <h5 class="fw-bold">Почта</h5>
-                                <p class="text-muted">Начните работать с {{ setting.title }}, который может предоставить все</p>
-                                <a href="mailto:contact@example.com" class="text-primary">{{ setting.email }}</a>
-                            </div>
-                        </div>
-                    </div><!--end col-->
-                    
-                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
-                        <div class="card border-0 text-center features feature-primary feature-clean">
-                            <div class="icons text-center mx-auto">
-                                <i class="uil uil-map-marker d-block rounded-md h3 mb-0"></i>
-                            </div>
-                            <div class="content mt-4 px-4">
-                                <h5 class="fw-bold">Адрес</h5>
-                                <p class="text-muted">{{ setting.address }}</p>
-                                <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin"
-                                    data-type="iframe" class="video-play-icon text-primary lightbox">Посмотреть на карте Google</a>
-                            </div>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container-->
+                            <div class="card-body position-relative p-4">
+                                <a href="{% url 'profile' new.user.username %}" class="badge tag gradient rounded-md fw-bold">{{ new.user }}</a>
 
-            <div class="container mt-100 mt-60">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 col-md-6 pt-2 pt-sm-0 order-2 order-md-1">
-                        <div class="card shadow rounded border-0">
-                            <div class="card-body py-5">
-                                <h4 class="card-title">Связаться с нами</h4>
-                                <div class="custom-form mt-3">
-                                    <form method="post" name="myForm" onsubmit="return validateForm()">
-                                        {% csrf_token %}
-                                        <p class="mb-0" id="error-msg"></p>
-                                        <div id="simple-msg"></div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Ваше имя <span class="text-danger">*</span></label>
-                                                    <input name="name" id="name" type="text" class="form-control" placeholder="Введите свое имя :">
-                                                </div>
-                                            </div>
-            
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Ваша почта <span class="text-danger">*</span></label>
-                                                    <input name="email" id="email" type="email" class="form-control" placeholder="Введите свою почту :">
-                                                </div> 
-                                            </div><!--end col-->
-            
-                                            <div class="col-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Заголовок</label>
-                                                    <input name="title" id="subject" class="form-control" placeholder="Введите заголовок вашего обращения :">
-                                                </div>
-                                            </div><!--end col-->
-            
-                                            <div class="col-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Сообщение <span class="text-danger">*</span></label>
-                                                    <textarea name="message" id="comments" rows="4" class="form-control" placeholder="Введите ваше сообщение :"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="d-grid">
-                                                    <button type="submit" id="submit" class="btn btn-primary rounded-md">Отправить сообщение</button>
-                                                </div>
-                                            </div><!--end col-->
-                                        </div><!--end row-->
-                                    </form>
-                                </div><!--end custom-form-->
+                                <ul class="list-unstyled mt-2">
+                                    <li class="list-inline-item text-muted small me-3"><i class="uil uil-calendar-alt text-dark h6 me-1"></i>{{ new.created }}</li>
+                                </ul>
+                                <a href="{% url 'news_detail' new.id %}" class="text-dark title h5 mt-3">{{ new.title }}</a>
+                                
+                                <div class="mt-3 d-flex justify-content-between align-items-center">
+                                    <a href="{% url 'news_detail' new.id %}" class="btn btn-link text-muted">Читать далее <i data-feather="arrow-right" class="fea icon-sm"></i></a>
+                                    <span class="text-muted fs-6"><a href="{% url 'profile' new.user.username %}" class="link">@{{ new.user }}</a></span>
+                                </div>
                             </div>
                         </div>
                     </div><!--end col-->
-
-                    <div class="col-lg-7 col-md-6 order-1 order-md-2">
-                        <div class="card border-0">
-                            <div class="card-body p-0">
-                                <img src="images/svg/office-desk.svg" class="img-fluid d-block mx-auto" style="max-width: 550px;" alt="">
-                            </div>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
+                    {% endfor %}
+                </div>
             </div><!--end container-->
         </section><!--end section-->
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 p-0">
-                    <div class="card map border-0">
-                        <div class="card-body p-0">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin" style="border:0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div><!--end col-->
-            </div><!--end row-->
-        </div><!--end container-->
-        <!-- End Section -->
+        <!-- End Blog -->
 
         <!-- Footer Start -->
         <footer class="bg-footer">

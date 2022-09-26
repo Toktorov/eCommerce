@@ -1,5 +1,7 @@
+from distutils.command.upload import upload
 from tabnanny import verbose
 from django.db import models
+from apps.users.models import User
 
 # Create your models here.
 class Setting(models.Model):
@@ -12,6 +14,20 @@ class Setting(models.Model):
     )
     logo = models.ImageField(
         upload_to = "logo/"
+    )
+    phone = models.CharField(
+        verbose_name="Телефонный номер",
+        max_length=100,
+        blank = True, null = True
+    )
+    email = models.EmailField(
+        verbose_name="Почта сайта",
+        blank = True, null = True
+    )
+    address = models.CharField(
+        max_length=255,
+        verbose_name="Адрес",
+        blank = True, null = True
     )
     facebook = models.URLField(
         verbose_name="Ссылка на страницу facebook",
@@ -99,3 +115,32 @@ class AboutUs(models.Model):
     class Meta:
         verbose_name = "О нас"
         verbose_name_plural = "О нас"
+    
+class News(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.DO_NOTHING,
+        related_name="news_user",
+        verbose_name="Пользователь"
+    )
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Заговок"
+    )
+    description = models.TextField(
+        verbose_name="Описание"
+    )
+    image = models.ImageField(
+        upload_to = 'news_image/',
+        verbose_name="Фотография"
+    )
+    created = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return self.title 
+
+    class Meta:
+        verbose_name = "Новость"
+        verbose_name_plural = "Новости"
