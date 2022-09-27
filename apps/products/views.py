@@ -3,12 +3,21 @@ from apps.products.models import Product, Currency
 from apps.settings.models import Setting
 from apps.categories.models import Category
 from apps.users.models import User
+from apps.chats.models import Chat
 
 # Create your views here.
 def product_detail(request, id):
     setting = Setting.objects.latest('id')
     product = Product.objects.get(id = id)
     random_product = Product.objects.all().order_by("?")[:4]
+    if request.method == "POST":
+        if 'chat' in request.POST:
+            try:
+                chat = Chat.objects.get(from_chat_user = request.user)
+                return redirect('chat_detail', chat.id_chat)
+            except:
+                chat = Chat.objects.create(from_chat_user = request.user, to_chat_user = product.user, chat_product = product)
+                return redirect('chat_detail', chat.id_chat)
     context = {
         'setting' : setting,
         'product' : product,

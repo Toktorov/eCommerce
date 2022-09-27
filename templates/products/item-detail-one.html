@@ -70,6 +70,16 @@
                             </div><!--end row-->
                             {% endif %}
                             {% endif %}
+                            {% if request.user != product.user %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <button type="submit" name = "chat" class="btn btn-dark rounded-md" style="margin-top: 10px;">Написать продавцу</button>
+                                    </form>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                            {% endif %}
 
                             <div class="row mt-4 pt-2">
                                 <div class="col-12">
