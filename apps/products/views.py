@@ -3,7 +3,8 @@ from apps.products.models import Product, Currency
 from apps.settings.models import Setting
 from apps.categories.models import Category
 from apps.users.models import User
-from apps.chats.models import Chat
+from apps.chats.models import Chat 
+from django.db.models import Q 
 
 # Create your views here.
 def product_detail(request, id):
@@ -105,3 +106,15 @@ def pro_product_update(request, id):
         'product' : product,
     }
     return render(request, 'products/pro_product.html', context)
+
+def product_search(request):
+    products = Product.objects.all()
+    setting = Setting.objects.latest('id')
+    search_key = request.GET.get('key')
+    if search_key:
+        products = Product.objects.filter(Q(title__icontains = search_key))
+    context = {
+        'products' : products,
+        'setting' : setting,
+    }
+    return render(request, 'settings/search_product.html', context)

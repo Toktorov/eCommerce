@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from apps.settings.models import Setting
 from apps.chats.models import Chat, UserChat
+from apps.users.models import User 
 
 # Create your views here.
 def chat_index(request, id_user):
@@ -11,6 +12,10 @@ def chat_index(request, id_user):
             raise BaseException('Error')
     except:
         chats = Chat.objects.filter(to_chat_user = id_user)
+    if request.method == "GET":
+        user = User.objects.get(id = id_user)
+        user.message_notification = False 
+        user.save()
     context = {
         'setting' : setting,
         'chats' : chats,
@@ -24,6 +29,8 @@ def chat_detail(request, id_chat):
     if request.method == "POST":
         message = request.POST.get('message')
         user_message = UserChat.objects.create(chat_id = chat, from_user = request.user, to_user = chat.to_chat_user, message = message)
+        chat.to_chat_user.message_notification = True
+        chat.to_chat_user.save()
         return redirect('chat_detail', chat.id_chat)
     context = {
         'setting' : setting, 

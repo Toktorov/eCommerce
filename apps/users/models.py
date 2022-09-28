@@ -1,4 +1,6 @@
+from tabnanny import verbose
 import uuid
+from xmlrpc.client import Boolean
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -29,7 +31,11 @@ class User(AbstractUser):
         verbose_name="Статус пользователя",
         default=False
     )
-
+    message_notification = models.BooleanField(
+        default = False,
+        verbose_name = "Уведомления от чатов"
+    )
+    
     def __str__(self):
         return self.username
 
@@ -53,3 +59,7 @@ class MoneyTransfer(models.Model):
 
     def __str__(self):
         return f"{self.address_wallet} {self.created}"
+
+    class Meta:
+        verbose_name = "Перевод денег"
+        verbose_name_plural = "Переводы денег"

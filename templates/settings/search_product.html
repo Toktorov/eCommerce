@@ -17,15 +17,14 @@
         <!-- Navbar End -->
 
         <!-- Start Home -->
-        {% if user.is_authenticated and request.user.id == chat.from_chat_user.id or request.user.id == chat.to_chat_user.id %}
         <section class="bg-half-170 d-table w-100" style="background: url('images/bg/01.jpg') bottom;">
             <div class="bg-overlay bg-gradient-overlay-2"></div>
             <div class="container">
                 <div class="row mt-5 justify-content-center">
                     <div class="col-12">
                         <div class="title-heading text-center">
-                            <h5 class="heading fw-semibold sub-heading text-white title-dark">Чат между {{ chat.from_chat_user }} и {{ chat.to_chat_user }}</h5>
-                            <p class="text-white-50 para-desc mx-auto mb-0">{{ chat.chat_product }}</p>
+                            <h5 class="heading fw-semibold sub-heading text-white title-dark">{{ category.title }}</h5>
+                            <p class="text-white-50 para-desc mx-auto mb-0">Объявление по этой категории {{ category.product_category.all.count }}</p>
                         </div>
                     </div><!--end col-->
                 </div><!--end row-->
@@ -33,8 +32,8 @@
                 <div class="position-middle-bottom">
                     <nav aria-label="breadcrumb" class="d-block">
                         <ul class="breadcrumb breadcrumb-muted mb-0 p-0">
-                            <li class="breadcrumb-item"><a href="{% url 'index' %}">Главная</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Чат</li>
+                            <li class="breadcrumb-item"><a href="{% url 'index' %}">{{ setting.title }}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ category.title }}</li>
                         </ul>
                     </nav>
                 </div>
@@ -52,80 +51,73 @@
         <!-- Start -->
         <section class="section">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 order-2 order-md-1 mt-4 pt-2 mt-sm-0 pt-sm-0">
-                        <div class="card creators creator-primary rounded-md shadow overflow-hidden sticky-bar">
-                            <div class="py-5" style="background: url('images/work/1.jpg');"></div>
-                            <div class="position-relative mt-n5">
-                                <img src="{{ request.user.profile_image.url }}" class="avatar avatar-md-md rounded-pill shadow-sm bg-light img-thumbnail mx-auto d-block" alt="">
-                                
-                                <div class="content text-center pt-2 p-4">
-                                    <h6 class="mb-0">{{ request.user.first_name }} {{ request.user.last_name }}</h6>
-                                    <small class="text-muted">@{{ request.user.username }}</small>
+                <div class="row justify-content-center mb-4 pb-2">
+                    <div class="col filters-group-wrap">
+                        
+                    </div><!--end col-->
+                </div><!--end row-->
 
-                                    <ul class="list-unstyled mb-0 mt-3" id="navmenu-nav">
-                                        <li class="px-0">
-                                            <a href="creator-profile.html" class="d-flex align-items-center text-dark">
-                                                <span class="fs-6 mb-0"><i class="uil uil-user"></i></span>
-                                                <small class="d-block fw-semibold mb-0 ms-2">Профиль</small>
-                                            </a>
-                                        </li>
-                                        
-                                        <li class="px-0 mt-2">
-                                            <a href="creator-profile-edit.html" class="d-flex align-items-center text-dark">
-                                                <span class="fs-6 mb-0"><i class="uil uil-setting"></i></span>
-                                                <small class="d-block fw-semibold mb-0 ms-2">Настройки</small>
-                                            </a>
-                                        </li>
-                                        
-                                        <li class="px-0 mt-2">
-                                            <a href="lock-screen.html" class="d-flex align-items-center text-dark">
-                                                <span class="fs-6 mb-0"><i class="uil uil-sign-in-alt"></i></span>
-                                                <small class="d-block fw-semibold mb-0 ms-2">Выйти</small>
-                                            </a>
-                                        </li>
-                                    </ul>
+                <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 g-4" id="grid">
+                    {% for product in products %}
+                    <div class="col picture-item">
+                        <div class="card nft-items nft-primary rounded-md shadow overflow-hidden mb-1">
+                            <div class="nft-image position-relative overflow-hidden">
+                                <a href="{% url 'product_detail' product.id %}"><img src="{{ product.product_image.url }}" class="img-fluid" alt=""></a>
+                            </div>
+                            <div class="card-body content position-relative">
+                                <div class="img-group">
+                                    <a href="{% url 'profile' product.user.username %}" class="user-avatar">
+                                        <img src="{{ product.user.profile_image.url }}" alt="user" class="avatar avatar-sm-sm img-thumbnail border-0 shadow-md rounded-circle">
+                                    </a>
+                                    
+                                </div>
+
+                                <div class="mt-2">
+                                    <a href="{% url 'product_detail' product.id %}" class="title text-dark h6">{{ product.title }}</a>
+
+                                    <div class="d-flex justify-content-between mt-2">
+                                        {% if product.currency.name_currency == "Договорная" %}
+                                        <small class="rate fw-bold">{{ product.currency }}</small>
+                                        {% else %}
+                                        <small class="rate fw-bold">{{ product.price }} {{ product.currency }}</small>
+                                        {% endif %}
+                                        <small class="text-dark fw-bold">{{ product.created|truncatewords:1 }}</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div><!--end col-->
-
-                    <div class="col-lg-9 col-md-8 order-1 order-md-2">
-                        <div class="card rounded-md shadow p-4">
-                            
-                               
-                                    {% for message in chat.user_chat_id.all %}
-                                    <div class="media msg ">
-                                        <a class="pull-left" href="#">
-                                            <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 32px; height: 32px;" src="{{ message.from_user.profile_image.url }}">
-                                        </a>
-                                        <div class="media-body">
-                                            <h6 >{{ message.from_user }}</h6>
-                                            <p >{{ message.message }}</p>
-                                            <h6 class="pull-right time"><i class="fa fa-clock-o"></i>{{ message.created }}</h6>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                              
-                    
-                              
-                                    <form method="post">
-                                        {% csrf_token %}
-                                        <input type="text" name = "message" class="form-control send-message" placeholder="Сообщение...">
-                                        <button type = "submit" class = "btn-primary">Отправить</button>
-                                    </form>
-                                
-                                
-                            </div>
-                        
-                    </div><!--end col-->
+                    {% endfor %}
                 </div><!--end row-->
             </div><!--end container-->
         </section><!--end section-->
-        {% else %}
-        {% include 'settings/error.html' %}
-        {% endif %}
         <!-- End -->
+
+        <section class="section pt-0 pt-sm-5 mt-0 mt-sm-5">
+            <div class="container">
+                <div class="bg-black rounded-md p-md-5 p-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="app-subscribe text-center text-md-start">
+                                    <img src="{% static 'images/cta.png' %}" class="img-fluid" height="120" alt="">
+                                </div>
+                            </div><!--end col-->
+
+                            <div class="col-lg-8 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                                <div class="section-title text-center text-md-start ms-xl-5 ms-md-4">
+                                    <h4 class="display-6 fw-bold text-white title-dark mb-0">Get <span class="text-gradient-primary fw-bold">Free collections </span> <br> with your subscription</h4>
+                                
+                                    <div class="mt-4">
+                                        <a href="javascript:void(0)" class="btn btn-link primary text-white title-dark">Subscribe Now <i class="uil uil-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div>
+            </div><!--end container-->
+        </section><!--end section-->
 
         <!-- Footer Start -->
         <footer class="bg-footer">
@@ -327,26 +319,4 @@
         </div>
         <!-- end Style switcher -->
         
-        <script>
-            const handleChange = () => {
-            const fileUploader = document.querySelector('#input-file');
-                const getFile = fileUploader.files
-                if (getFile.length !== 0) {
-                    const uploadedFile = getFile[0];
-                    readFile(uploadedFile);
-                }
-            }
-
-            const readFile = (uploadedFile) => {
-                if (uploadedFile) {
-                    const reader = new FileReader();
-                    reader.onload = () => {
-                    const parent = document.querySelector('.preview-box');
-                    parent.innerHTML = `<img class="preview-content" src=${reader.result} />`;
-                    };
-                    
-                    reader.readAsDataURL(uploadedFile);
-                }
-            };
-        </script>
 {% endblock %}
