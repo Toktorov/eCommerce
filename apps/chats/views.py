@@ -9,9 +9,9 @@ def chat_index(request, id_user):
     try:
         chats = Chat.objects.filter(from_chat_user = id_user)
         if len(chats) == 0:
-            raise BaseException('Error')
+            chats = Chat.objects.filter(to_chat_user = id_user)
     except:
-        chats = Chat.objects.filter(to_chat_user = id_user)
+        return redirect('index')
     if request.method == "GET":
         user = User.objects.get(id = id_user)
         user.message_notification = False 

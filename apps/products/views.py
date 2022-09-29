@@ -14,7 +14,7 @@ def product_detail(request, id):
     if request.method == "POST":
         if 'chat' in request.POST:
             try:
-                chat = Chat.objects.get(from_chat_user = request.user)
+                chat = Chat.objects.get(from_chat_user = request.user, chat_product = product)
                 return redirect('chat_detail', chat.id_chat)
             except:
                 chat = Chat.objects.create(from_chat_user = request.user, to_chat_user = product.user, chat_product = product)
@@ -37,8 +37,11 @@ def create_product(request):
         category = request.POST.get('category')
         price = request.POST.get('price')
         currency = request.POST.get('currency')
-        product = Product.objects.create(user = request.user, title = title, description = description, product_image = image, category_id = category, price = price, currency_id = currency)
-        return redirect('index')
+        if image and title and category and price and currency:
+            product = Product.objects.create(user = request.user, title = title, description = description, product_image = image, category_id = category, price = price, currency_id = currency)
+            return redirect('index')
+        else:
+            return redirect('product_create_error')
     context = {
         'setting' : setting,
         'categories' : categories,
@@ -72,10 +75,13 @@ def update_product(request, id):
             return redirect('index')
         if 'product_image' in request.POST:
             image = request.FILES.get('image')
-            product = Product.objects.get(id = id)
-            product.product_image = image 
-            product.save()
-            return redirect('product_detail', product.id)
+            if image:
+                product = Product.objects.get(id = id)
+                product.product_image = image 
+                product.save()
+                return redirect('product_detail', product.id)
+            else:
+                return redirect('product_detail', product.id)
     context = {
         'setting' : setting,
         'product' : product,

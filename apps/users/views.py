@@ -12,15 +12,21 @@ def register(request):
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
         if password == confirm_password:
-            user = User.objects.create(username = username, email = email)
-            user.set_password(password)
-            user.save()
-            user = User.objects.get(username = username)
-            user = authenticate(username = username, password = password)
-            login(request, user)
-            return redirect('index')
+            if username and email and password and confirm_password:
+                try:
+                    user = User.objects.create(username = username, email = email)
+                    user.set_password(password)
+                    user.save()
+                    user = User.objects.get(username = username)
+                    user = authenticate(username = username, password = password)
+                    login(request, user)
+                    return redirect('index')
+                except:
+                    return redirect('register_error')
+            else:
+                return redirect('register_error')
         else:
-            return redirect('register')
+            return redirect('register_error')
     context = {
         'setting' : setting,
     }
@@ -31,10 +37,13 @@ def user_login(request):
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = User.objects.get(username = username)
-        user = authenticate(username = username, password = password)
-        login(request, user)
-        return redirect('index')
+        try:
+            user = User.objects.get(username = username)
+            user = authenticate(username = username, password = password)
+            login(request, user)
+            return redirect('index')
+        except:
+            return redirect('user_not_found')
     context = {
         'setting' : setting,
     }

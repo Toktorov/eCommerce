@@ -97,7 +97,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="d-grid">
-                                        <p class="fw-semibold mb-4">Загрузите фотография вашего товара</p>
+                                        <p class="fw-semibold mb-4">Загрузите фотографию товара <span class="text-danger">*</span></p>
                                         <div class="preview-box d-block justify-content-center rounded-md shadow overflow-hidden bg-light text-muted p-2 text-center small">Главное фото будет отображаться в результатах поиска</div>
                                         <input type="file" id="input-file" name = "image" name="input-file" accept="image/*" onchange={handleChange()} hidden />
                                         <label class="btn-upload btn btn-primary rounded-md mt-4" for="input-file">Загрузить фотографию</label>
@@ -119,7 +119,7 @@
                                                 </div><!--end col-->
         
                                                 <div class="col-md-6 mb-4">
-                                                    <label class="form-label fw-bold">Категория :</label>
+                                                    <label class="form-label fw-bold">Категория : <span class="text-danger">*</span></label>
                                                     <select name="category" class="form-control">
                                                         {% for category in categories %}
                                                         <option value = "{{ category.id }}">{{ category.title }}</option>
@@ -128,12 +128,12 @@
                                                 </div><!--end col-->
         
                                                 <div class="col-md-6 mb-4">
-                                                    <label class="form-label fw-bold"> Цена : </label>
+                                                    <label class="form-label fw-bold"> Цена : <span class="text-danger">*</span></label>
                                                     <input name = "price" type="text" class="form-control" id="time">
                                                 </div><!--end col-->
 
                                                 <div class="col-md-6 mb-4">
-                                                    <label class="form-label fw-bold">Валюта :</label>
+                                                    <label class="form-label fw-bold">Валюта : <span class="text-danger">*</span></label>
                                                     <select name = "currency" class="form-control">
                                                         {% for cur in currency %}
                                                         <option value = "{{ cur.id }}">{{ cur.name_currency }}</option>

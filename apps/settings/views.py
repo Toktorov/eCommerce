@@ -39,6 +39,15 @@ def destination_not_found(request):
 def thank_you(request):
    return render(request, 'settings/thank_you.html')
 
+def product_create_error(request):
+    return render(request, 'settings/product_create_error.html')
+
+def user_not_found(request):
+    return render(request, 'settings/user_not_found.html')
+
+def register_error(request):
+    return render(request, 'settings/register_error.html')
+
 def about_us(request):
     setting = Setting.objects.latest('id')
     about = AboutUs.objects.latest('id')

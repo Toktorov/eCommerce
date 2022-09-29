@@ -5,7 +5,7 @@ from apps.users.models import User, MoneyTransfer
 class UserAdmin(admin.ModelAdmin):
     # list_filter = ('username', )
     list_display = ('username', 'email', 'date_joined', 'balance', 'status_user')
-    search_fields = ('username', 'email', 'date_joined', 'balance', 'status_user')
+    search_fields = ('wallet','username', 'email', 'date_joined', 'balance', 'status_user')
 
 class MoneyTransferAdmin(admin.ModelAdmin):
     list_display = ('user', 'address_wallet', 'amount_money', 'created')
