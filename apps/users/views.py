@@ -1,7 +1,13 @@
 from django.shortcuts import render, redirect
+from apps.settings.views import news_detail
 from apps.users.models import User, MoneyTransfer
 from apps.settings.models import Setting
 from django.contrib.auth import login, authenticate
+from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode
 
 # Create your views here.
 def register(request):
@@ -86,6 +92,24 @@ def user_setting(request, id):
             user = User.objects.get(id = id)
             user.delete()
             return redirect('index')
+        if 'update_password' in request.POST:
+            password = request.POST.get('password')
+            new_password = request.POST.get('new_password')
+            confirm_password = request.POST.get('confirm_password')
+            if new_password == confirm_password:
+                try:
+                    user = User.objects.get(username = request.user)
+                    if user.check_password(password):
+                        user.set_password(new_password)
+                        user.save()
+                        return redirect('profile', user.username)
+                    else:
+                        return redirect('current_password_error')
+                except:
+                    return redirect('user_not_found')
+            else:
+                return redirect('passwords_are_different')
+           
     context = {
         'user' : user,
         'setting' : setting,
@@ -136,3 +160,24 @@ def money_transfer(request):
         'setting' : setting,
     }
     return render(request, 'users/money_transfer.html', context)
+
+def password_reset_send(request):
+    if request.method == "POST":
+        email = request.POST.get('email')
+        try:
+            check_email = User.objects.get(email = email)
+            print(check_email)
+            send_mail(
+                    # title:
+                    f"Восстановить пароль",
+                    # message:
+                    f"Привет {check_email.username}! Мы получили запрос на сброс пароля для учетной записи Sulpak, связанной с {email}. Перейдите по ссылке чтобы восстановить доступ к аккаунту http:// 192.168.0.139:8000/users/reset/{urlsafe_base64_encode(force_bytes(check_email.pk))}/{default_token_generator.make_token(check_email)}",
+                    # from:
+                    "noreply@somehost.local",
+                    # to:
+                    [email]
+            )
+            return HttpResponse("Сообщение со сброс успешно отправлена!")
+        except:
+            return HttpResponse("Почта не найдена")
+    return render(request, 'users/password_reset.html')

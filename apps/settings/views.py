@@ -5,7 +5,6 @@ from apps.products.models import Product
 from apps.users.models import User
 from apps.categories.models import Category
 
-
 # Create your views here.
 def index(request):
     try:
@@ -47,6 +46,12 @@ def user_not_found(request):
 
 def register_error(request):
     return render(request, 'settings/register_error.html')
+
+def current_password_error(request):
+    return render(request, 'settings/current_password_error.html')
+
+def passwords_are_different(request):
+    return render(request, 'settings/passwords_are_different.html')
 
 def about_us(request):
     setting = Setting.objects.latest('id')

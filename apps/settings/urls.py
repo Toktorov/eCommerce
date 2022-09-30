@@ -3,7 +3,8 @@ from apps.settings.views import (index, not_enough_money,
 no_settings, destination_not_found, contact, 
 thank_you, about_us, news_detail, news_index, 
 product_create_error, user_not_found,
-register_error)
+register_error, current_password_error,
+passwords_are_different)
 
 urlpatterns = [
     path('', index, name = "index"),
@@ -17,5 +18,7 @@ urlpatterns = [
     path('about_us/', about_us, name = "about_us"),
     path('product/create/error/', product_create_error, name = "product_create_error"),
     path('user/not_found/', user_not_found, name = "user_not_found"),
-    path('register/error/', register_error, name = "register_error")
+    path('register/error/', register_error, name = "register_error"),
+    path('current/password/error/', current_password_error, name = "current_password_error"),
+    path('password/are/different/', passwords_are_different, name = "passwords_are_different")
 ]

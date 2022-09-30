@@ -108,6 +108,46 @@
                             </div>
                         </div>
 
+                        <div class="col-lg-8 col-md-7 col-12 order-2 order-md-1 mt-4 pt-2">
+                            <div class="rounded-md shadow">
+                                <div class="p-4 border-bottom">
+                                    <h5 class="mb-0">Обновить пароль :</h5>
+                                </div>
+    
+                                <div class="p-4">
+                                    <form class="profile-edit" method="POST">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-12 mb-4">
+                                                <label class="form-label h6">Текущий пароль</label>
+                                                <input name="password" id="first" type="password" class="form-control">
+                                            </div><!--end col-->
+        
+                                            <div class="col-12 mb-4">
+                                                <label class="form-label h6">Новый пароль</label>
+                                                <div class="form-icon">
+                                                    <input name="new_password" id="web-url" type="password" class="form-control">
+                                                </div>
+                                            </div><!--end col-->
+    
+                                            <div class="col-12 mb-4">
+                                                <label class="form-label h6">Потвердите пароль</label>
+                                                <div class="form-icon">
+                                                    <input name="confirm_password" id="web-url" type="password" class="form-control">
+                                                </div>
+                                            </div><!--end col-->
+            
+                                            
+                                        
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <button type="submit" id="submit" name="update_password" class="btn btn-danger rounded-md">Обновить пароль {{ user.username }}</button>
+                                            </div><!--end col-->
+                                        </div><!--end row-->
+                                    </form>
+                                </div>
+                            </div>
+
                         <div class="rounded-md shadow mt-4">
                             <div class="p-4 border-bottom">
                                 <h5 class="mb-0">Уведомления об учетной записи:</h5>
