@@ -1,0 +1,1 @@
+web: gunicorn sulpak.wsgi --log-file
