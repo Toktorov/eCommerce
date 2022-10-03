@@ -1,1 +1,1 @@
-web: gunicorn sulpak.wsgi --log-file
+web: gunicorn sulpak.wsgi
