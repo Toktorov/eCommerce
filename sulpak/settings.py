@@ -181,4 +181,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
 
-django_heroku(locals())
+django_heroku.settings(locals())
