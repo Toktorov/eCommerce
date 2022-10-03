@@ -10,7 +10,7 @@ from django.db.models import Q
 def product_detail(request, id):
     setting = Setting.objects.latest('id')
     product = Product.objects.get(id = id)
-    random_product = Product.objects.all().order_by("?")[:4]
+    random_product = Product.objects.filter(activity_product = True, status_product = True).order_by("?")[:4]
     if request.method == "POST":
         if 'chat' in request.POST:
             try:
@@ -19,12 +19,16 @@ def product_detail(request, id):
             except:
                 chat = Chat.objects.create(from_chat_user = request.user, to_chat_user = product.user, chat_product = product)
                 return redirect('chat_detail', chat.id_chat)
+        if 'deactivate_product' in request.POST:
+            product.activity_product = False 
+            product.save()
+            return redirect('profile', request.user.username)
     context = {
         'setting' : setting,
         'product' : product,
         'random_product' : random_product
     }
-    return render(request, 'products/item-detail-one.html', context)
+    return render(request, 'products/detail.html', context)
 
 def create_product(request):
     setting = Setting.objects.latest('id')
@@ -47,7 +51,7 @@ def create_product(request):
         'categories' : categories,
         'currency' : currency,
     }
-    return render(request, 'products/upload_product.html', context)
+    return render(request, 'products/create.html', context)
 
 def update_product(request, id):
     setting = Setting.objects.latest('id')
@@ -118,7 +122,7 @@ def product_search(request):
     setting = Setting.objects.latest('id')
     search_key = request.GET.get('key')
     if search_key:
-        products = Product.objects.filter(Q(title__icontains = search_key))
+        products = Product.objects.filter(Q(title__icontains = search_key, activity_product = True))
     context = {
         'products' : products,
         'setting' : setting,

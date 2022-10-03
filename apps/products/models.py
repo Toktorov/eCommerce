@@ -1,3 +1,4 @@
+from email.policy import default
 from tabnanny import verbose
 from django.db import models
 from apps.users.models import User
@@ -54,6 +55,10 @@ class Product(models.Model):
     status_product = models.BooleanField(
         verbose_name="Статус продукта",
         default=False
+    )
+    activity_product = models.BooleanField(
+        verbose_name = "Активность продукта",
+        default = True,
     )
     created = models.DateTimeField(
         auto_now_add=True,

@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from apps.settings.views import news_detail
 from apps.users.models import User, MoneyTransfer
 from apps.settings.models import Setting
 from django.contrib.auth import login, authenticate
@@ -62,7 +61,7 @@ def profile(request, username):
         'user' : user,
         'setting' : setting
     }
-    return render(request, 'users/creator-profile.html', context)
+    return render(request, 'users/detail.html', context)
 
 def user_setting(request, id):
     user = User.objects.get(id = id)
@@ -114,7 +113,7 @@ def user_setting(request, id):
         'user' : user,
         'setting' : setting,
     }
-    return render(request, 'users/creator-profile-edit.html', context)
+    return render(request, 'users/update.html', context)
 
 def pro_update_user(request, id):
     setting = Setting.objects.latest('id')

@@ -12,7 +12,7 @@ def index(request):
     except:
         return redirect('no_settings')
     products = Product.objects.all().order_by("?")[:20]
-    random_product = Product.objects.all().order_by("?").filter(status_product = True)[:1]
+    random_product = Product.objects.all().order_by("?").filter(status_product = True, activity_product = True)[:1]
     users = User.objects.all().order_by("?")
     categories = Category.objects.all().order_by("?")[:5]
     news = News.objects.all()

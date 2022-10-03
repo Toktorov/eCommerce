@@ -1,8 +1,6 @@
-from tabnanny import verbose
-import uuid
-from xmlrpc.client import Boolean
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+import uuid
 
 # Create your models here.
 class User(AbstractUser):

@@ -1,0 +1,114 @@
+{% load static %}
+<footer class="bg-footer">
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7 col-md-6">
+                    <h5 class="text-light fw-normal title-dark">{{ setting.description }}</h5>
+                    
+                    <div class="mt-4">
+                        <a href=""><img src="{% static 'images/app.png' %}" height="40" alt=""></a>
+                        <a href="" class="ms-2"><img src="{% static 'images/playstore.png' %}" height="40" alt=""></a>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-5 col-md-6 mt-4 mt-sm-0">
+                    <h5 class="text-light fw-normal title-dark">Наши соц. сети</h5>
+
+                    <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
+                        {% if setting.facebook %}
+                        <li class="list-inline-item lh-1"><a href="{{ setting.facebook }}" class="rounded"><i class="uil uil-facebook-f"></i></a></li>
+                        {% endif %}
+                        {% if setting.instagram %}
+                        <li class="list-inline-item lh-1"><a href="{{ setting.instagram }}" class="rounded"><i class="uil uil-instagram"></i></a></li>
+                        {% endif %}
+                        {% if setting.linkedin %}
+                        <li class="list-inline-item lh-1"><a href="{{ setting.linkedin }}" class="rounded"><i class="uil uil-linkedin"></i></a></li>
+                        {% endif %}
+                        {% if setting.twitter %}
+                        <li class="list-inline-item lh-1"><a href="{{ setting.twitter }}" class="rounded"><i class="uil uil-twitter"></i></a></li>
+                        {% endif %}
+                        {% if setting.skype %}
+                        <li class="list-inline-item lh-1"><a href="{{ setting.skype }}" class="rounded"><i class="uil uil-skype"></i></a></li>
+                        {% endif %}
+                        {% if setting.telegram %}
+                        <li class="list-inline-item lh-1"><a href="{{ setting.telegram }}" class="rounded"><i class="uil uil-telegram"></i></a></li>
+                        {% endif %}
+                        {% if setting.whatsapp %}
+                        <li class="list-inline-item lh-1"><a href="{{ setting.whatsapp }}" class="rounded"><i class="uil uil-whatsapp"></i></a></li>
+                        {% endif %}
+                    </ul>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </div><!--end div-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="footer-py-60 footer-border">
+                    <div class="row">
+                        <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                            <a href="#" class="logo-footer">
+                                <img src="images/icon-logo-64.png" alt="">
+                            </a>
+                            <p class="para-desc mb-0 mt-4">{{ setting.description }}</p>
+                        
+                            
+                        </div><!--end col-->
+                        
+                        <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                            <h5 class="footer-head">{{ setting.title }}</h5>
+                            <ul class="list-unstyled footer-list mt-4">
+                                <li><a href="{% url 'index' %}" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Домой</a></li>
+                                <li><a href="{% url 'news_index' %}" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Новости</a></li>
+                                <li><a href="{% url 'about_us' %}" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> О нас</a></li>
+                                <li><a href="{% url 'contact' %}" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Контакты</a></li>
+                               
+                            </ul>
+                        </div><!--end col-->
+                        
+                       
+    
+                        <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                            <h5 class="footer-head">Новостная рассылка</h5>
+                            <p class="mt-4">Зарегистрируйтесь и получайте последние советы по электронной почте.</p>
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="foot-subscribe mb-3">
+                                            <label class="form-label">Напишите свой адрес электронной почты <span class="text-danger">*</span></label>
+                                            <div class="form-icon position-relative">
+                                                <i data-feather="mail" class="fea icon-sm icons"></i>
+                                                <input type="email" name="email" id="emailsubscribe" class="form-control ps-5 rounded" placeholder="Ваша почта : " required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="d-grid">
+                                            <input type="submit" id="submitsubscribe" name="send" class="btn btn-soft-primary" value="Подписаться">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div>
+            </div><!--end slide-->
+        </div><!--end row-->
+    </div><!--end container-->
+
+    <div class="footer-py-30 footer-bar">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <div class="text-sm-start">
+                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> {{ setting.title }}. Project By <i class="mdi mdi-heart text-danger"></i> by <a href="https://itrun.kg/" target="_blank" class="text-reset">IT-RUN</a>.</p>
+                    </div>
+                </div><!--end col-->
+
+                
+            </div><!--end row-->
+        </div><!--end container-->
+    </div>
+</footer><!--end footer-->
