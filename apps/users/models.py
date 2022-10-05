@@ -4,7 +4,7 @@ import uuid
 
 # Create your models here.
 class User(AbstractUser):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.UUIDField(primary_key=True, editable=False)
     profile_image = models.ImageField(
         upload_to = "profile_image/",
         verbose_name="Фотография профиля",
